@@ -2,16 +2,19 @@
 
 import { Hero } from './components/sections/hero'
 import { WeddingDetails } from './components/sections/wedding-details'
+import { Attire } from './components/sections/attire'
+import { Reminders } from './components/sections/reminders'
+import { RSVP } from './components/sections/rsvp'
 
 export default function Page() {
   return (
     <main className="min-h-screen">
       <Hero />
       <WeddingDetails />
-      {/* <Attire />
+      <Attire />
       <Reminders />
       <RSVP />
-      <Footer /> */}
+      {/*<Footer /> */}
     </main>
   )
 }

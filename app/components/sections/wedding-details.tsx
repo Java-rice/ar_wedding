@@ -4,94 +4,64 @@ import Image from 'next/image'
 
 export function WeddingDetails() {
   return (
-    <section className="bg-primary py-20 md:py-32 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="space-y-12">
-          {/* Rings & Venue Hero */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
-              <Image
-                src="/wedding-rings.png"
-                alt="Wedding Rings"
-                fill
-                className="object-cover"
-              />
+    <section id="details" className="bg-[#f8f3ef] px-4 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12 text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#b06a4c]">
+            Our story
+          </p>
+          <h2 className="font-serif text-4xl font-light text-[#2e221f] md:text-5xl">
+            Our Journey Together
+          </h2>
+        </div>
+
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="relative h-80 overflow-hidden rounded-[28px] shadow-[0_24px_70px_rgba(46,34,31,0.14)] ring-1 ring-black/5">
+              <Image src="/wedding-rings.png" alt="Wedding Rings" fill className="object-cover" />
             </div>
-            <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
-              <Image
-                src="/wedding-venue.png"
-                alt="Wedding Venue"
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-80 overflow-hidden rounded-[28px] shadow-[0_24px_70px_rgba(46,34,31,0.14)] ring-1 ring-black/5">
+              <Image src="/wedding-venue.png" alt="Wedding Venue" fill className="object-cover" />
             </div>
           </div>
 
-          {/* Introduction */}
-          <div className="text-center space-y-6 max-w-2xl mx-auto">
-            <h2 className="font-serif text-4xl md:text-5xl font-light text-primary-foreground">
-              Our Journey Together
-            </h2>
-            <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              We are filled with joy as we invite you to share in the celebration of our love story. 
-              This intimate gathering brings together our dearest family and friends to witness the 
-              beginning of our forever.
+          <div className="rounded-[30px] border border-[#e9dacc] bg-[#fffdfb] p-7 shadow-[0_28px_70px_rgba(46,34,31,0.08)] md:p-9">
+            <p className="mb-5 text-sm uppercase tracking-[0.28em] text-[#7d625d]">
+              The celebration
             </p>
-          </div>
-
-          {/* Event Details Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Couple */}
-            <div className="text-center space-y-3">
-              <h3 className="font-serif text-2xl font-light text-accent">The Bride & Groom</h3>
-              <div className="space-y-2 text-primary-foreground">
-                <p className="text-lg">Arvie Pandac</p>
-                <p className="text-sm text-primary-foreground/70">Groom</p>
-              </div>
-              <div className="h-px w-8 bg-accent/30 mx-auto" />
-              <div className="space-y-2 text-primary-foreground">
-                <p className="text-lg">Regina Domingo</p>
-                <p className="text-sm text-primary-foreground/70">Bride</p>
-              </div>
-            </div>
-
-            {/* Ceremony Details */}
-            <div className="text-center space-y-3">
-              <h3 className="font-serif text-2xl font-light text-accent">The Ceremony</h3>
-              <div className="space-y-4 text-primary-foreground">
-                <div>
-                  <p className="text-sm text-primary-foreground/70 uppercase tracking-wide mb-1">Date</p>
-                  <p className="text-lg">Sunday, December 1, 2026</p>
-                </div>
-                <div>
-                  <p className="text-sm text-primary-foreground/70 uppercase tracking-wide mb-1">Time</p>
-                  <p className="text-lg">4:00 PM</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Location */}
-            <div className="text-center space-y-3">
-              <h3 className="font-serif text-2xl font-light text-accent">The Venue</h3>
-              <div className="space-y-2 text-primary-foreground">
-                <p className="text-lg font-medium">[Venue Location]</p>
-                <p className="text-sm text-primary-foreground/70">
-                  [Full Address]
-                </p>
-                <p className="text-sm text-primary-foreground/70">
-                  [City, State]
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Message */}
-          <div className="text-center space-y-6 max-w-2xl mx-auto border-t border-primary-foreground/20 pt-8">
-            <p className="text-primary-foreground/90 leading-relaxed">
-              We are honored to have you witness this sacred moment. Your presence means the world to us 
-              as we embark on this new chapter of our lives together.
+            <p className="text-lg leading-relaxed text-[#564842]">
+              We are filled with joy as we invite you to share in the celebration of our love story. This intimate gathering brings together our dearest family and friends to witness the beginning of our forever.
             </p>
-            <p className="font-serif text-lg text-accent">With love and gratitude</p>
+
+            <div className="mt-8 space-y-4 border-t border-[#f0e3db] pt-6">
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-[#7d625d]">Date</p>
+                <p className="mt-2 text-xl text-[#2e221f]">Sunday, December 1, 2026</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-[#7d625d]">Time</p>
+                <p className="mt-2 text-xl text-[#2e221f]">4:00 PM</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-[#7d625d]">Venue</p>
+                <p className="mt-2 text-xl text-[#2e221f]">[Venue Location]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="rounded-[24px] border border-[#ebddd3] bg-[#fffaf7] p-6 text-center shadow-[0_14px_28px_rgba(46,34,31,0.04)]">
+            <h3 className="font-serif text-2xl text-[#2e221f]">The Bride</h3>
+            <p className="mt-3 text-lg text-[#564842]">Regina Domingo</p>
+          </div>
+          <div className="rounded-[24px] border border-[#ebddd3] bg-[#fffaf7] p-6 text-center shadow-[0_14px_28px_rgba(46,34,31,0.04)]">
+            <h3 className="font-serif text-2xl text-[#2e221f]">The Groom</h3>
+            <p className="mt-3 text-lg text-[#564842]">Arvie Pandac</p>
+          </div>
+          <div className="rounded-[24px] border border-[#ebddd3] bg-[#fffaf7] p-6 text-center shadow-[0_14px_28px_rgba(46,34,31,0.04)]">
+            <h3 className="font-serif text-2xl text-[#2e221f]">The Moment</h3>
+            <p className="mt-3 text-lg text-[#564842]">A lifetime begins</p>
           </div>
         </div>
       </div>

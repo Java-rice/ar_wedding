@@ -12,20 +12,22 @@ export function Attire() {
   ]
 
   return (
-    <section className="bg-background py-20 md:py-32 px-4">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-6">
-            Attire Guide
+    <section className="bg-background px-4 py-20 md:py-32">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#b06a4c]">
+            Attire guide
+          </p>
+          <h2 className="mb-6 font-serif text-4xl font-light text-[#2e221f] md:text-5xl">
+            Dress for the Day
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Please dress in formal attire that complements our boho aesthetic
+          <p className="mx-auto max-w-2xl text-[#5f4e49]">
+            Please dress in formal attire that complements our warm, earthy aesthetic.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          {/* Image */}
-          <div className="relative aspect-square rounded-lg overflow-hidden bg-muted">
+        <div className="mb-16 grid items-center gap-12 md:grid-cols-2">
+          <div className="relative aspect-square overflow-hidden rounded-[28px] bg-[#edded2] shadow-[0_26px_70px_rgba(46,34,31,0.12)] ring-1 ring-black/5">
             <Image
               src="/attire-guide.png"
               alt="Attire color palette"
@@ -34,36 +36,32 @@ export function Attire() {
             />
           </div>
 
-          {/* Details */}
-          <div className="space-y-8">
+          <div className="space-y-8 rounded-[30px] border border-[#eadbcf] bg-[#fffdfb] p-7 shadow-[0_28px_70px_rgba(46,34,31,0.06)] md:p-8">
             <div className="space-y-4">
-              <h3 className="font-serif text-2xl font-light text-foreground">Color Palette</h3>
-              <p className="text-foreground/70">
-                We invite our guests to wear formal attire in earth tones and warm neutrals that 
-                harmonize with our boho-inspired celebration. These colors reflect the natural elegance 
-                we&apos;ve envisioned for our special day.
+              <h3 className="font-serif text-2xl font-light text-[#2e221f]">Color Palette</h3>
+              <p className="text-[#564842]">
+                We invite our guests to wear formal attire in earth tones and warm neutrals that harmonize with our boho-inspired celebration.
               </p>
             </div>
 
-            {/* Color swatches */}
             <div className="space-y-3">
               {colorPalette.map((color, idx) => (
-                <div key={idx} className="flex items-center gap-4">
+                <div key={idx} className="flex items-center gap-4 rounded-2xl border border-[#f0e3db] bg-[#fffaf7] p-3">
                   <div
-                    className="w-12 h-12 rounded-lg border border-border shadow-sm"
+                    className="h-12 w-12 rounded-xl border border-black/5 shadow-sm"
                     style={{ backgroundColor: color.color }}
                   />
                   <div>
-                    <p className="font-medium text-foreground">{color.name}</p>
-                    <p className="text-sm text-muted-foreground">{color.color}</p>
+                    <p className="font-medium text-[#2e221f]">{color.name}</p>
+                    <p className="text-sm text-[#6d5b55]">{color.color}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="space-y-3 pt-4 border-t border-border">
-              <h4 className="font-medium text-foreground">Dress Code: Formal</h4>
-              <ul className="space-y-2 text-foreground/70 text-sm">
+            <div className="space-y-3 border-t border-[#f0e3db] pt-4">
+              <h4 className="font-medium text-[#2e221f]">Dress Code: Formal</h4>
+              <ul className="space-y-2 text-sm text-[#564842]">
                 <li>• Long dresses or formal gowns for women</li>
                 <li>• Dark suits or formal wear for men</li>
                 <li>• Dress shoes required</li>
@@ -73,29 +71,25 @@ export function Attire() {
           </div>
         </div>
 
-        {/* Gift Guide */}
-        <div className="bg-primary/5 p-8 md:p-12 rounded-lg border border-primary/10">
-          <h3 className="font-serif text-2xl font-light text-foreground mb-6">Gift Guide</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="space-y-2">
-              <p className="font-medium text-foreground">Registry</p>
-              <p className="text-foreground/70 text-sm">
-                Your support helps us build our home together. Our registry is available at 
-                [Registry Link]
+        <div className="rounded-[28px] border border-[#eadbcf] bg-[#f4e9e2] p-8 md:p-12 shadow-[0_20px_55px_rgba(46,34,31,0.05)]">
+          <h3 className="mb-6 font-serif text-2xl font-light text-[#2e221f]">Gift Guide</h3>
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="space-y-2 rounded-2xl bg-[#fffdfb] p-5 shadow-sm">
+              <p className="font-medium text-[#2e221f]">Registry</p>
+              <p className="text-sm text-[#564842]">
+                Your support helps us build our home together. Our registry is available at [Registry Link].
               </p>
             </div>
-            <div className="space-y-2">
-              <p className="font-medium text-foreground">Monetary Gifts</p>
-              <p className="text-foreground/70 text-sm">
-                Should you prefer to give a monetary gift, this would be greatly appreciated and help 
-                us start our journey together.
+            <div className="space-y-2 rounded-2xl bg-[#fffdfb] p-5 shadow-sm">
+              <p className="font-medium text-[#2e221f]">Monetary Gifts</p>
+              <p className="text-sm text-[#564842]">
+                Should you prefer to give a monetary gift, this would be greatly appreciated as we start our journey together.
               </p>
             </div>
-            <div className="space-y-2">
-              <p className="font-medium text-foreground">Most Appreciated</p>
-              <p className="text-foreground/70 text-sm">
-                Your presence at our celebration means more to us than any gift. Simply being here to 
-                share in our joy is the greatest honor.
+            <div className="space-y-2 rounded-2xl bg-[#fffdfb] p-5 shadow-sm">
+              <p className="font-medium text-[#2e221f]">Most Appreciated</p>
+              <p className="text-sm text-[#564842]">
+                Your presence at our celebration means more to us than any gift. Sharing in our joy is the greatest honor.
               </p>
             </div>
           </div>

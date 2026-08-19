@@ -20,43 +20,44 @@ export function Reminders() {
   ]
 
   return (
-    <section className="bg-primary py-20 md:py-32 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-light text-primary-foreground mb-6">
+    <section className="bg-[#2b201e] px-4 py-20 md:py-32">
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#f0c7a4]">
+            essentials
+          </p>
+          <h2 className="mb-6 font-serif text-4xl font-light text-white md:text-5xl">
             Important Reminders
           </h2>
-          <p className="text-primary-foreground/80">
+          <p className="text-[#f5e9e1]/80">
             A few things to help make our day perfect
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-3">
           {reminders.map((reminder, idx) => (
             <div
               key={idx}
-              className="bg-primary-foreground/5 p-8 rounded-lg border border-primary-foreground/10 hover:border-accent/30 transition-colors space-y-4"
+              className="space-y-4 rounded-[24px] border border-white/10 bg-white/5 p-8 shadow-[0_18px_40px_rgba(18,14,13,0.14)] transition-colors hover:border-[#f0c7a4]/40"
             >
               <div className="text-4xl">{reminder.icon}</div>
-              <h3 className="font-serif text-xl font-light text-primary-foreground">
+              <h3 className="font-serif text-xl font-light text-white">
                 {reminder.title}
               </h3>
-              <p className="text-primary-foreground/80 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-[#f5e9e1]/80">
                 {reminder.description}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Photo sharing note */}
-        <div className="mt-16 text-center space-y-6 max-w-2xl mx-auto">
-          <div className="text-accent text-4xl">📸</div>
-          <h3 className="font-serif text-2xl font-light text-primary-foreground">
+        <div className="mx-auto mt-16 max-w-2xl space-y-6 text-center">
+          <div className="text-4xl text-[#f0c7a4]">📸</div>
+          <h3 className="font-serif text-2xl font-light text-white">
             Snap & Share
           </h3>
-          <p className="text-primary-foreground/80">
-            After the ceremony, feel free to capture candid moments and share photos from the reception. 
-            Tag us on social media using our wedding hashtag: <span className="font-medium text-accent">#ArveAndRegina2026</span>
+          <p className="text-[#f5e9e1]/80">
+            After the ceremony, feel free to capture candid moments and share photos from the reception. Tag us on social media using our wedding hashtag: <span className="font-medium text-[#f0c7a4]">#ArveAndRegina2026</span>
           </p>
         </div>
       </div>

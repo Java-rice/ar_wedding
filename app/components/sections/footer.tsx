@@ -2,25 +2,22 @@
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground py-12 px-4">
-      <div className="max-w-5xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {/* Couple */}
+    <footer className="bg-[#1f1a18] px-4 py-12 text-[#f8f1ee]">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-12 grid gap-8 md:grid-cols-3">
           <div className="text-center">
-            <h3 className="font-serif text-xl font-light mb-2">With Love</h3>
-            <p className="text-primary-foreground/80">Arvie & Regina</p>
+            <h3 className="mb-2 font-serif text-xl font-light">With Love</h3>
+            <p className="text-[#f8f1ee]/75">Arvie & Regina</p>
           </div>
 
-          {/* Date */}
           <div className="text-center">
-            <h3 className="font-serif text-xl font-light mb-2">Our Day</h3>
-            <p className="text-primary-foreground/80">December 1, 2026</p>
+            <h3 className="mb-2 font-serif text-xl font-light">Our Day</h3>
+            <p className="text-[#f8f1ee]/75">December 1, 2026</p>
           </div>
 
-          {/* Contact */}
           <div className="text-center">
-            <h3 className="font-serif text-xl font-light mb-2">Questions?</h3>
-            <p className="text-primary-foreground/80 text-sm">
+            <h3 className="mb-2 font-serif text-xl font-light">Questions?</h3>
+            <p className="text-sm text-[#f8f1ee]/75">
               [Contact Email]
               <br />
               [Phone Number]
@@ -28,15 +25,13 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="h-px bg-primary-foreground/20 mb-8" />
+        <div className="mb-8 h-px bg-white/10" />
 
-        {/* Bottom message */}
-        <div className="text-center space-y-4">
-          <p className="font-serif text-lg text-accent">
+        <div className="space-y-4 text-center">
+          <p className="font-serif text-lg text-[#f0c9a7]">
             "A successful marriage requires falling in love many times, always with the same person."
           </p>
-          <p className="text-xs text-primary-foreground/70">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#f8f1ee]/60">
             Thank you for celebrating with us • December 1, 2026
           </p>
         </div>

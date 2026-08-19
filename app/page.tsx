@@ -5,6 +5,7 @@ import { WeddingDetails } from './components/sections/wedding-details'
 import { Attire } from './components/sections/attire'
 import { Reminders } from './components/sections/reminders'
 import { RSVP } from './components/sections/rsvp'
+import { Footer } from './components/sections/footer'
 
 export default function Page() {
   return (
@@ -14,7 +15,7 @@ export default function Page() {
       <Attire />
       <Reminders />
       <RSVP />
-      {/*<Footer /> */}
+      <Footer />
     </main>
   )
 }

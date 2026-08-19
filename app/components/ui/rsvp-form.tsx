@@ -19,10 +19,10 @@ interface RSVPFormProps {
 export function RSVPForm({ onSubmit }: RSVPFormProps) {
   const [formData, setFormData] = useState({
     name: '',
+    email: '',
     guestCount: '1',
     attending: 'yes',
-    dietaryRestrictions: '',
-    specialRequests: '',
+    notes: '',
   })
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
@@ -49,13 +49,17 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
         body: JSON.stringify(formData),
       })
 
+      const data = await response.json().catch(() => null)
+
       if (!response.ok) {
-        throw new Error('Failed to submit RSVP')
+        const message = data?.error || 'Failed to submit RSVP.'
+        throw new Error(message)
       }
 
       onSubmit()
     } catch (err) {
-      setError('Failed to submit RSVP. Please try again.')
+      const message = err instanceof Error && err.message ? err.message : 'Failed to submit RSVP. Please try again.'
+      setError(message)
       console.error('RSVP submission error:', err)
     } finally {
       setIsLoading(false)
@@ -90,6 +94,23 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
             </option>
           ))}
         </select>
+      </div>
+
+      {/* Email Address */}
+      <div className="space-y-2">
+        <label htmlFor="email" className="block text-sm font-medium text-foreground">
+          Email Address
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="your@email.com"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="w-full px-4 py-3 border border-border rounded-lg bg-card text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+        />
       </div>
 
       {/* Guest Count */}
@@ -142,33 +163,17 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
         </div>
       </div>
 
-      {/* Dietary Restrictions */}
+      {/* Notes */}
       <div className="space-y-2">
-        <label htmlFor="dietary" className="block text-sm font-medium text-foreground">
-          Dietary Restrictions (Optional)
-        </label>
-        <input
-          type="text"
-          id="dietary"
-          name="dietaryRestrictions"
-          placeholder="e.g., Vegetarian, Gluten-free"
-          value={formData.dietaryRestrictions}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-border rounded-lg bg-card text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-        />
-      </div>
-
-      {/* Special Requests */}
-      <div className="space-y-2">
-        <label htmlFor="requests" className="block text-sm font-medium text-foreground">
-          Special Requests (Optional)
+        <label htmlFor="notes" className="block text-sm font-medium text-foreground">
+          Notes (Optional)
         </label>
         <textarea
-          id="requests"
-          name="specialRequests"
-          placeholder="Any questions or special requests?"
+          id="notes"
+          name="notes"
+          placeholder="Anything we should know?"
           rows={3}
-          value={formData.specialRequests}
+          value={formData.notes}
           onChange={handleChange}
           className="w-full px-4 py-3 border border-border rounded-lg bg-card text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none"
         />

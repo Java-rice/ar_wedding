@@ -4,22 +4,22 @@ import { PhotoGallery } from '../ui/photo-gallery'
 
 export function Hero() {
   const galleryImages = [
-    { src: '/couple-1.png', alt: 'Arvie & Regina - Wedding Moment' },
-    { src: '/couple-2.png', alt: 'Dancing Together' },
-    { src: '/bride.png', alt: 'Bride' },
-    { src: '/groom.png', alt: 'Groom' },
-    { src: '/wedding-details.png', alt: 'Wedding Details' },
+    { src: '/Images/hero1.jpg', alt: 'Arvie & Regina - Wedding Moment' },
+    { src: '/Images/hero2.jpg', alt: 'Dancing Together' },
+    { src: '/Images/hero3.jpg', alt: 'Bride' },
+    { src: '/Images/hero4.jpg', alt: 'Groom' },
+    { src: '/Images/hero5.jpg', alt: 'Wedding Details' },
   ]
 
   return (
     <section className="relative isolate min-h-screen w-full overflow-hidden bg-[#120e0d]">
       <div className="absolute inset-0 h-full w-full">
         <PhotoGallery images={galleryImages} autoplay interval={6000} />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.22),transparent_28%),linear-gradient(120deg,rgba(18,14,13,0.82),rgba(18,14,13,0.58),rgba(18,14,13,0.9))]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.22),transparent_50%),linear-gradient(120deg,rgba(18,14,13,0.82),rgba(18,14,13,0.58),rgba(18,14,13,0.9))]" />
       </div>
 
       <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-20">
-        <div className="w-full max-w-3xl rounded-[34px] border border-white/15 bg-[#201a19]/55 p-6 shadow-[0_30px_90px_rgba(18,14,13,0.45)] backdrop-blur-md sm:p-8 md:p-12">
+        <div className="w-full max-w-3xl rounded-[34px] border border-white/5 bg-[#201a19]/15 p-6 shadow-[0_30px_90px_rgba(18,14,13,0.18)] backdrop-blur-[2px] sm:p-8 md:p-12">
           <div className="mb-8 flex items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.42em] text-[#f7e0c9]">
             <span className="h-px w-10 bg-[#f7e0c9]/70" />
             with love
@@ -51,6 +51,12 @@ export function Hero() {
             </div>
           </div>
 
+          <div className="mt-6 text-center">
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f7d4ae]">
+              #LifetimeARVIEntureswithREGINA
+            </p>
+          </div>
+
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="#rsvp"
@@ -60,7 +66,7 @@ export function Hero() {
             </a>
 
             <a
-              href="#details"
+              href="/story"
               className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-7 py-3 text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
             >
               Our Story

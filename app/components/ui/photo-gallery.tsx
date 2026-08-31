@@ -32,7 +32,7 @@ export function PhotoGallery({ images, autoplay = true, interval = 5000 }: Photo
   }
 
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-lg shadow-2xl">
+    <div className="relative z-0 h-full w-full overflow-hidden rounded-lg shadow-2xl pointer-events-auto">
       {/* Images */}
       {images.map((image, index) => (
         <div
@@ -54,7 +54,7 @@ export function PhotoGallery({ images, autoplay = true, interval = 5000 }: Photo
       {/* Navigation Buttons */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all"
+        className="absolute left-4 top-1/2 z-30 -translate-y-1/2 cursor-pointer bg-black/30 p-2 text-white rounded-full transition-all hover:bg-black/50"
         aria-label="Previous photo"
       >
         <ChevronLeft size={24} />
@@ -62,21 +62,21 @@ export function PhotoGallery({ images, autoplay = true, interval = 5000 }: Photo
 
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all"
+        className="absolute right-4 top-1/2 z-30 -translate-y-1/2 cursor-pointer bg-black/30 p-2 text-white rounded-full transition-all hover:bg-black/50"
         aria-label="Next photo"
       >
         <ChevronRight size={24} />
       </button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+      <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 gap-2">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
+            className={`h-2 w-2 cursor-pointer rounded-full transition-all ${
               index === currentIndex
-                ? 'bg-white w-6'
+                ? 'w-6 bg-white'
                 : 'bg-white/50 hover:bg-white/75'
             }`}
             aria-label={`Go to photo ${index + 1}`}
@@ -85,7 +85,7 @@ export function PhotoGallery({ images, autoplay = true, interval = 5000 }: Photo
       </div>
 
       {/* Counter */}
-      <div className="absolute top-4 right-4 z-10 bg-black/40 text-white px-3 py-1 rounded-full text-sm">
+      <div className="absolute right-4 top-4 z-30 rounded-full bg-black/40 px-3 py-1 text-sm text-white">
         {currentIndex + 1} / {images.length}
       </div>
     </div>

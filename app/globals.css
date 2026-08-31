@@ -48,38 +48,38 @@
 
 :root {
   color-scheme: light;
-  --background: #f7f1eb;
-  --foreground: #241b1a;
-  --card: #fffdfb;
-  --card-foreground: #241b1a;
-  --popover: #fffdfb;
-  --popover-foreground: #241b1a;
-  --primary: #2e221f;
-  --primary-foreground: #fefaf7;
-  --secondary: #ead7ca;
-  --secondary-foreground: #2e221f;
-  --muted: #e8d7ce;
-  --muted-foreground: #5f4e49;
-  --accent: #b06a4c;
+  --background: #f7f0ea;
+  --foreground: #2d201c;
+  --card: #fffdf9;
+  --card-foreground: #2d201c;
+  --popover: #fffdf9;
+  --popover-foreground: #2d201c;
+  --primary: #2d201c;
+  --primary-foreground: #f8f2eb;
+  --secondary: #e9d7c7;
+  --secondary-foreground: #2d201c;
+  --muted: #f2e7df;
+  --muted-foreground: #665550;
+  --accent: #b85c3b;
   --accent-foreground: #fffaf7;
   --destructive: #b92c2c;
-  --border: rgba(46, 34, 31, 0.09);
+  --border: rgba(45, 32, 28, 0.1);
   --input: #ffffff;
-  --ring: #b06a4c;
-  --chart-1: #2e221f;
-  --chart-2: #6b4a3d;
-  --chart-3: #b06a4c;
-  --chart-4: #d7b69d;
-  --chart-5: #f1e5dc;
+  --ring: #b85c3b;
+  --chart-1: #2d201c;
+  --chart-2: #7a655d;
+  --chart-3: #b85c3b;
+  --chart-4: #c97a5f;
+  --chart-5: #f0d7b9;
   --radius: 1rem;
-  --sidebar: #f7f1eb;
-  --sidebar-foreground: #241b1a;
-  --sidebar-primary: #2e221f;
-  --sidebar-primary-foreground: #fefaf7;
-  --sidebar-accent: #b06a4c;
+  --sidebar: #f7f0ea;
+  --sidebar-foreground: #2d201c;
+  --sidebar-primary: #2d201c;
+  --sidebar-primary-foreground: #f8f2eb;
+  --sidebar-accent: #b85c3b;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: rgba(46, 34, 31, 0.1);
-  --sidebar-ring: #b06a4c;
+  --sidebar-border: rgba(45, 32, 28, 0.1);
+  --sidebar-ring: #b85c3b;
 }
 
 .dark {
@@ -161,9 +161,9 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      radial-gradient(circle at top, rgba(176, 106, 76, 0.15), transparent 28%),
-      radial-gradient(circle at bottom right, rgba(92, 68, 59, 0.08), transparent 32%),
-      linear-gradient(180deg, #f9f5f1 0%, #f3ece5 100%);
+      radial-gradient(circle at top, rgba(184, 92, 59, 0.12), transparent 24%),
+      radial-gradient(circle at bottom right, rgba(122, 101, 93, 0.08), transparent 28%),
+      linear-gradient(180deg, #f7f0ea 0%, #f3e9e0 100%);
     font-feature-settings: "kern" 1;
     text-rendering: optimizeLegibility;
     letter-spacing: 0.3px;

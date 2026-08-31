@@ -1,7 +1,31 @@
+import { promises as fs } from 'node:fs'
+import path from 'node:path'
+
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
 import { buildConfirmationEmail } from '../../lib/rsvp-email'
+
+const RSVPS_PATH = path.join(process.cwd(), 'data', 'rsvps.json')
+
+async function readRsvps() {
+  try {
+    const raw = await fs.readFile(RSVPS_PATH, 'utf8')
+    return JSON.parse(raw)
+  } catch {
+    return []
+  }
+}
+
+async function writeRsvps(rsvps: Array<Record<string, unknown>>) {
+  await fs.mkdir(path.dirname(RSVPS_PATH), { recursive: true })
+  await fs.writeFile(RSVPS_PATH, JSON.stringify(rsvps, null, 2), 'utf8')
+}
+
+export async function GET() {
+  const rsvps = await readRsvps()
+  return NextResponse.json(rsvps)
+}
 
 export async function POST(request: Request) {
   try {
@@ -26,6 +50,19 @@ export async function POST(request: Request) {
         { error: 'Name and email are required.' },
         { status: 400 }
       )
+    }
+
+    const existingRsvps = await readRsvps()
+    const alreadyExists = existingRsvps.some((entry: Record<string, unknown>) => {
+      return String(entry.email).toLowerCase() === formData.email.toLowerCase()
+    })
+
+    if (!alreadyExists) {
+      existingRsvps.push({
+        ...formData,
+        createdAt: new Date().toISOString(),
+      })
+      await writeRsvps(existingRsvps)
     }
 
     const { subject, text } = buildConfirmationEmail(formData)

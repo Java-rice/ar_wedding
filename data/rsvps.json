@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Arvie Pandac",
+    "email": "arvie@example.com",
+    "guestCount": "2",
+    "attending": "yes",
+    "notes": "Family table near the dance floor",
+    "createdAt": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "name": "Regina Domingo",
+    "email": "regina@example.com",
+    "guestCount": "2",
+    "attending": "yes",
+    "notes": "Close to the couple seating area",
+    "createdAt": "2026-08-31T00:00:00.000Z"
+  },
+  {
+    "name": "Guest Name 1",
+    "email": "johnmark.p.peroche@gmail.com",
+    "guestCount": "1",
+    "attending": "yes",
+    "notes": "test",
+    "createdAt": "2026-08-31T10:39:24.102Z"
+  }
+]

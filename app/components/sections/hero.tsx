@@ -4,11 +4,11 @@ import { PhotoGallery } from '../ui/photo-gallery'
 
 export function Hero() {
   const galleryImages = [
-    { src: '/Images/hero1.jpg', alt: 'Arvie & Regina - Wedding Moment' },
-    { src: '/Images/hero2.jpg', alt: 'Dancing Together' },
-    { src: '/Images/hero3.jpg', alt: 'Bride' },
-    { src: '/Images/hero4.jpg', alt: 'Groom' },
-    { src: '/Images/hero5.jpg', alt: 'Wedding Details' },
+    { src: '/Images/main1.jpg', alt: 'Arvie & Regina - Wedding Moment' },
+    { src: '/Images/main2.jpg', alt: 'Dancing Together' },
+    { src: '/Images/main3.jpg', alt: 'Bride' },
+    { src: '/Images/main4.jpg', alt: 'Groom' },
+    { src: '/Images/main5.jpg', alt: 'Wedding Details' },
   ]
 
   return (
@@ -20,22 +20,21 @@ export function Hero() {
 
       <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-20">
         <div className="w-full max-w-3xl rounded-[34px] border border-white/5 bg-[#201a19]/15 p-6 shadow-[0_30px_90px_rgba(18,14,13,0.18)] backdrop-blur-[2px] sm:p-8 md:p-12">
-          <div className="mb-8 flex items-center justify-center gap-3 text-[10px] font-semibold uppercase tracking-[0.42em] text-[#f7e0c9]">
+          <div className="mb-2 flex items-center justify-center gap-3 text-[16px] font-semibold uppercase tracking-[0.42em] text-[#f7e0c9]">
             <span className="h-px w-10 bg-[#f7e0c9]/70" />
             with love
             <span className="h-px w-10 bg-[#f7e0c9]/70" />
           </div>
 
-          <div className="space-y-6 text-center">
-            <p className="text-xs font-medium uppercase tracking-[0.52em] text-[#f2caa5]">
-              December 1, 2026
-            </p>
+          <div className="space-y-4 text-center">
 
-            <h1 className="font-serif text-5xl font-light text-white sm:text-6xl md:text-[5.5rem]">
-              Arvie
-              <span className="my-2 block text-[#f7d4ae]">&</span>
-              Regina
-            </h1>
+            <div className="flex justify-center">
+              <img
+                src="/Images/logo.png"
+                alt="Couple's Logo"
+                className="h-auto w-full max-w-[300px] object-contain sm:max-w-[360px] md:max-w-[430px] lg:max-w-[500px]"
+              />
+            </div>
 
             <p className="mx-auto max-w-xl text-base leading-relaxed text-white/75 md:text-lg">
               Join us as we celebrate a new chapter filled with joy, laughter, and a lifetime of love.
@@ -44,7 +43,7 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <div className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-[10px] uppercase tracking-[0.28em] text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-              Sunday • 4:00 PM
+              Tuesday • 4:00 PM
             </div>
             <div className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-[10px] uppercase tracking-[0.28em] text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
               Garden Venue

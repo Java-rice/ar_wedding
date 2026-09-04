@@ -70,11 +70,15 @@ export function WeddingDetails() {
             <div className="mt-8 space-y-4 border-t border-[#ecdfd4] pt-6">
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Date</p>
-                <p className="mt-2 text-xl text-[#2d201c]">Sunday, December 1, 2026</p>
+                <p className="mt-2 text-xl text-[#2d201c]">Tuesday, December 1, 2026</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Ceremony Time</p>
                 <p className="mt-2 text-xl text-[#2d201c]">3:00 PM</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Church</p>
+                <p className="mt-2 text-xl text-[#2d201c]">Iglesia Ni Cristo, Ciudad de Victoria</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Reception</p>
@@ -90,24 +94,24 @@ export function WeddingDetails() {
               {
                 title: 'The Bride',
                 name: 'Regina Domingo',
-                image: '/Images/hero3.jpg',
+                image: '/Images/bride.jpg',
               },
               {
                 title: 'The Groom',
                 name: 'Arvie Pandac',
-                image: '/Images/hero4.jpg',
+                image: '/Images/groom.jpg',
               },
               {
                 title: 'The Moment',
                 name: 'A lifetime begins',
-                image: '/Images/hero1.jpg',
+                image: '/Images/lifetime.jpg',
               },
             ].map((item) => (
               <div
                 key={item.title}
                 className="group relative overflow-hidden rounded-[28px] bg-[#fffaf5] shadow-[0_18px_40px_rgba(45,32,28,0.08)]"
               >
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-90 overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.title}

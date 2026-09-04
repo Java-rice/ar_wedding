@@ -58,8 +58,8 @@ export function Attire() {
           </p>
         </div>
 
-        <div className="mb-16 grid items-center gap-12 md:grid-cols-2">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[30px] bg-[#f1e6dc] shadow-[0_25px_70px_rgba(45,32,28,0.14)]">
+        <div className="mb-8 grid items-center gap-12">
+          {/* <div className="relative aspect-[4/5] overflow-hidden rounded-[30px] bg-[#f1e6dc] shadow-[0_25px_70px_rgba(45,32,28,0.14)]">
             <img
               src={selectedColor.attire}
               alt={`${selectedColor.name} attire example`}
@@ -69,7 +69,7 @@ export function Attire() {
             <div className="absolute bottom-4 left-4 rounded-full border border-white/40 bg-[#2d201c]/30 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.24em] text-white backdrop-blur-sm">
               {selectedColor.name}
             </div>
-          </div>
+          </div> */}
 
           <div className="space-y-8 rounded-[30px] bg-[#fffaf5] p-7 shadow-[0_20px_55px_rgba(45,32,28,0.08)] md:p-8">
             <div className="space-y-4">

@@ -27,7 +27,7 @@ export function WeddingDetails() {
           <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
             <div className="relative h-[420px] overflow-hidden rounded-[30px] bg-[#f2e6dc] shadow-[0_22px_60px_rgba(45,32,28,0.12)] md:h-[500px]">
               <Image
-                src="/Images/hero1.jpg"
+                src="/Images/main1.jpg"
                 alt="The couple together"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

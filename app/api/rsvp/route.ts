@@ -36,10 +36,13 @@ export async function POST(request: Request) {
 
     const { guest, host } = buildRsvpEmails(formData)
     const guestEmail = formData.email
-    const hostEmail = (process.env.RSVP_TO_EMAIL || 'perochejmp@gmail.com').trim()
+    const hostEmails = (process.env.RSVP_TO_EMAIL || 'apandac06@gmail.com,perochejmp@gmail.com')
+      .split(',')
+      .map((email) => email.trim())
+      .filter(Boolean)
     const smtpUser = process.env.SMTP_USER?.trim()
     const smtpPass = process.env.SMTP_PASS?.trim()
-    const smtpFrom = process.env.SMTP_FROM?.trim() || hostEmail
+    const smtpFrom = process.env.SMTP_FROM?.trim() || hostEmails[0]
 
     if (!smtpUser || !smtpPass) {
       return NextResponse.json(
@@ -71,7 +74,7 @@ export async function POST(request: Request) {
 
     await transporter.sendMail({
       from: smtpFrom,
-      to: hostEmail,
+      to: hostEmails,
       replyTo: guestEmail,
       subject: host.subject,
       text: host.text,
@@ -83,7 +86,7 @@ export async function POST(request: Request) {
       message: 'RSVP received. Confirmation and notification emails have been sent.',
       email: {
         to: guestEmail,
-        host: hostEmail,
+        host: hostEmails,
         subject: guest.subject,
       },
     })

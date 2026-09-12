@@ -137,62 +137,6 @@ export function Attire() {
             </div>
           </div>
         </div>
-{/* 
-        <div className="rounded-[28px] bg-[#f2e6dc] p-8 md:p-12 shadow-[0_18px_45px_rgba(45,32,28,0.06)]">
-          <h3 className="mb-6 font-serif text-2xl font-light text-[#2d201c]">Gift Guide</h3>
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="overflow-hidden rounded-2xl bg-[#fffaf5] shadow-[0_12px_28px_rgba(45,32,28,0.05)]">
-              <div className="relative h-36 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80&sat=-15"
-                  alt="Gift registry"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2d201c]/40 to-transparent" />
-              </div>
-              <div className="space-y-3 p-5">
-                <p className="font-medium text-[#2d201c]">Registry</p>
-                <p className="text-sm text-[#554843]">
-                  Your support helps us build our home together. Our registry is available at [Registry Link].
-                </p>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-2xl bg-[#fffaf5] shadow-[0_12px_28px_rgba(45,32,28,0.05)]">
-              <div className="relative h-36 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80&sat=-15"
-                  alt="Monetary gifts"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2d201c]/40 to-transparent" />
-              </div>
-              <div className="space-y-3 p-5">
-                <p className="font-medium text-[#2d201c]">Monetary Gifts</p>
-                <p className="text-sm text-[#554843]">
-                  Should you prefer to give a monetary gift, this would be greatly appreciated as we start our journey together.
-                </p>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-2xl bg-[#fffaf5] shadow-[0_12px_28px_rgba(45,32,28,0.05)]">
-              <div className="relative h-36 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80&sat=-15"
-                  alt="Most appreciated"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2d201c]/40 to-transparent" />
-              </div>
-              <div className="space-y-3 p-5">
-                <p className="font-medium text-[#2d201c]">Most Appreciated</p>
-                <p className="text-sm text-[#554843]">
-                  Your presence at our celebration means more to us than any gift. Sharing in our joy is the greatest honor.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </section>
   )

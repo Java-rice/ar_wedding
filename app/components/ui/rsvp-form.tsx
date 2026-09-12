@@ -2,16 +2,6 @@
 
 import { useState } from 'react'
 
-const GUEST_NAMES = [
-  'Arvie Pandac',
-  'Regina Domingo',
-  'Guest Name 1',
-  'Guest Name 2',
-  'Guest Name 3',
-  'Guest Name 4',
-  'Guest Name 5',
-]
-
 interface RSVPFormProps {
   onSubmit: () => void
 }
@@ -20,10 +10,11 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    guestCount: '1',
     attending: 'yes',
     notes: '',
   })
+  const [additionalGuestName, setAdditionalGuestName] = useState('')
+  const [additionalGuestNames, setAdditionalGuestNames] = useState<string[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -46,7 +37,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, guestNames: additionalGuestNames }),
       })
 
       const data = await response.json().catch(() => null)
@@ -67,33 +58,28 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-md mx-auto">
+    <form onSubmit={handleSubmit} className="max-w-md space-y-3 text-left">
       {error && (
         <div className="p-4 bg-destructive/10 border border-destructive/30 rounded-lg text-destructive text-sm">
           {error}
         </div>
       )}
 
-      {/* Name Selection */}
+      {/* Name */}
       <div className="space-y-2">
         <label htmlFor="name" className="block text-sm font-medium text-foreground">
-          Select Your Name
+          Name
         </label>
-        <select
+        <input
+          type="text"
           id="name"
           name="name"
+          placeholder="Your full name"
           value={formData.name}
           onChange={handleChange}
           required
           className="w-full px-4 py-3 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-        >
-          <option value="">Choose your name</option>
-          {GUEST_NAMES.map(name => (
-            <option key={name} value={name}>
-              {name}
-            </option>
-          ))}
-        </select>
+        />
       </div>
 
       {/* Email Address */}
@@ -113,23 +99,55 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
         />
       </div>
 
-      {/* Guest Count */}
-      <div className="space-y-2">
-        <label htmlFor="guestCount" className="block text-sm font-medium text-foreground">
-          Number of Guests
-        </label>
-        <select
-          id="guestCount"
-          name="guestCount"
-          value={formData.guestCount}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-border rounded-lg bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-        >
-          <option value="1">1 Guest</option>
-          <option value="2">2 Guests</option>
-          <option value="3">3 Guests</option>
-          <option value="4">4 Guests</option>
-        </select>
+      {/* Additional guests */}
+      <div className="space-y-3 rounded-2xl border border-border bg-card/60 p-4">
+        <div>
+          <label htmlFor="additionalGuestName" className="block text-sm font-medium text-foreground">
+            RSVP for someone else
+          </label>
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+            You may submit this RSVP on behalf of another guest. Add their name below.
+          </p>
+        </div>
+        <div className="flex flex-col gap-2 sm:flex-row">
+          <input
+            type="text"
+            id="additionalGuestName"
+            value={additionalGuestName}
+            onChange={(e) => setAdditionalGuestName(e.target.value)}
+            placeholder="Other guest's full name"
+            className="min-w-0 flex-1 px-4 py-3 border border-border rounded-lg bg-card text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+          />
+          <button
+            type="button"
+            onClick={() => {
+              const name = additionalGuestName.trim()
+              if (!name) return
+              setAdditionalGuestNames((names) => [...names, name])
+              setAdditionalGuestName('')
+            }}
+            className="rounded-lg border border-accent px-4 py-3 text-sm font-medium text-foreground transition hover:bg-accent/10"
+          >
+            Add guest
+          </button>
+        </div>
+        {additionalGuestNames.length > 0 && (
+          <ul className="space-y-2" aria-label="Additional guests">
+            {additionalGuestNames.map((guestName, index) => (
+              <li key={`${guestName}-${index}`} className="flex items-center justify-between rounded-lg bg-background px-3 py-2 text-sm text-foreground">
+                <span>{guestName}</span>
+                <button
+                  type="button"
+                  onClick={() => setAdditionalGuestNames((names) => names.filter((_, guestIndex) => guestIndex !== index))}
+                  aria-label={`Remove ${guestName}`}
+                  className="px-2 text-lg leading-none text-muted-foreground transition hover:text-foreground"
+                >
+                  &times;
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       {/* Attendance */}
@@ -147,7 +165,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
               onChange={handleChange}
               className="w-4 h-4 accent-accent"
             />
-            <span className="text-foreground">Yes, I'll be there!</span>
+            <span className="text-foreground">Yes, I&apos;ll be there!</span>
           </label>
           <label className="flex items-center gap-2 cursor-pointer">
             <input

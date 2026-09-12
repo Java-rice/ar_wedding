@@ -4,19 +4,19 @@ export function Reminders() {
   const reminders = [
     {
       image:
-        'https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80&sat=-20',
+        '/Images/arrive_on_time.jpeg',
       title: 'Arrive on Time',
       description: 'Please arrive 15-20 minutes before the ceremony begins. This allows time for seating and photos before we start.',
     },
     {
       image:
-        'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80&sat=-15',
+        '/Images/unplugged.jpg',
       title: 'Unplugged Ceremony',
       description: 'We kindly request that all phones and cameras be put away during the ceremony. Professional photos will be shared with everyone.',
     },
     {
       image:
-        'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80&sat=-20',
+        '/Images/enjoy_celebrate.jpg',
       title: 'Enjoy & Celebrate',
       description: 'Come ready to celebrate with us! This is a day to create beautiful memories and share in the joy of our union.',
     },
@@ -65,7 +65,7 @@ export function Reminders() {
         <div className="relative mx-auto mt-16 max-w-2xl overflow-hidden rounded-[28px] border border-[#f7e0c9]/10 bg-[#f9f3ee]/5 p-8 text-center shadow-[0_20px_40px_rgba(18,14,13,0.14)]">
           <div className="absolute inset-0 opacity-20">
             <img
-              src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1400&q=80&sat=-25"
+              src="/Images/snap_share.jpg"
               alt="Wedding day atmosphere"
               className="h-full w-full object-cover"
             />

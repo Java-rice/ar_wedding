@@ -37,7 +37,7 @@ export function WeddingDetails() {
             <div className="flex flex-col gap-6">
               <div className="relative h-52 overflow-hidden rounded-[30px] bg-[#f2e6dc] shadow-[0_22px_60px_rgba(45,32,28,0.12)] md:h-64">
                 <Image
-                  src="/Images/hero2.jpg"
+                  src="/Images/main2.jpg"
                   alt="The couple smiling"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"

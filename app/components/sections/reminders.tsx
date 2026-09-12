@@ -80,7 +80,7 @@ export function Reminders() {
               Snap & Share
             </h3>
             <p className="mt-4 text-[#f4e9e2]/80">
-              After the ceremony, feel free to capture candid moments and share photos from the reception. Tag us on social media using our wedding hashtag: <span className="font-medium text-[#f0d7b9]">#LifetimeARVIEntureswithREGINA</span>
+              After the ceremony, feel free to capture candid moments and share photos from the reception. Tag us on social media using our wedding hashtags: <span className="font-medium text-[#f0d7b9]">#LifetimeARVIEntureswithREGINA</span> and <span className="font-medium text-[#f0d7b9]">#ARVIEryspecialmomentswithREGINA</span>
             </p>
           </div>
         </div>

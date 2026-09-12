@@ -50,9 +50,12 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mt-6 text-center">
+          <div className="mt-6 space-y-2 text-center">
             <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f7d4ae]">
               #LifetimeARVIEntureswithREGINA
+            </p>
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f7d4ae]">
+              #ARVIEryspecialmomentswithREGINA
             </p>
           </div>
 

@@ -7,6 +7,12 @@ const entourageGroups = [
     ],
   },
   {
+    title: 'GROOM',
+    members: [
+      { name: 'Elisa Pacaldo', nickname: 'Elisa', status: 'Accepted', relation: 'Mother', remarks: 'Parents of the Groom' },
+    ],
+  },
+  {
     title: 'PRINCIPAL SPONSORS',
     members: [
       { name: 'Ludevico Domingo', nickname: 'Ding', status: 'Accepted', relation: 'Uncle of Bride', remarks: 'Ninong' },
@@ -22,17 +28,13 @@ const entourageGroups = [
     ],
   },
   {
-    title: 'SECONDARY SPONSORS',
-    members: [],
-  },
-  {
     title: 'BEST MAN',
     members: [
       { name: 'Ludevico Domingo Jr', nickname: 'Jhay', status: 'Accepted', relation: 'Cousin of the Bride', remarks: 'Groomsmen' },
       { name: 'John Mark Peroche', nickname: 'MacMac', status: 'Accepted', relation: 'Cousin of the Groom', remarks: 'Groomsmen' },
       { name: 'Eyrone Gie Fernandez', nickname: 'Gie', status: 'Accepted', relation: 'Friend', remarks: 'Groomsmen' },
       { name: 'Ken Rhogel Villapeña', nickname: 'Ken', status: 'Accepted', relation: 'Friend', remarks: 'Groomsmen' },
-      { name: 'Third Panes', nickname: 'Bhum', status: 'Accepted', relation: 'Friend', remarks: 'Ring Bearer' },
+      { name: 'Aristotle Agustin', nickname: 'Aries', status: 'Accepted', relation: 'Friend', remarks: 'Groomsmen' },
     ],
   },
   {
@@ -43,6 +45,18 @@ const entourageGroups = [
       { name: 'Rhobelyn Fernandez', nickname: 'Rhob', status: 'Accepted', relation: 'Friend', remarks: 'Bridesmaids' },
       { name: 'Maria Patricia Fernando', nickname: 'Mia', status: 'Accepted', relation: 'Friend', remarks: 'Bridesmaids' },
       { name: 'Melisa Agda', nickname: 'Mel', status: 'Accepted', relation: 'Friend', remarks: 'Flower Girl' },
+    ],
+  },
+  {
+    title: 'FLOWER GIRL',
+    members: [
+      { name: 'Rome Cassie Santos', nickname: 'Cassie', status: 'Accepted', relation: "Friend's Daughter", remarks: 'Flower Girl' },
+    ],
+  },
+  {
+    title: 'RING BEARER',
+    members: [
+      { name: 'Elijah Reign Fernandez', nickname: 'Eli', status: 'Accepted', relation: "Friend's Son", remarks: 'Ring Bearer' },
     ],
   },
 ]
@@ -78,11 +92,8 @@ export default function GuestListPage() {
                       key={`${group.title}-${member.name}`}
                       className="rounded-[22px] border border-[#efe3d8] bg-[#fffaf5] p-5 shadow-[0_12px_26px_rgba(45,32,28,0.03)]"
                     >
-                      <div className="mb-3 flex items-center justify-between gap-3">
+                      <div className="mb-3">
                         <h3 className="font-serif text-2xl text-[#2d201c]">{member.name}</h3>
-                        <span className="rounded-full bg-[#ead8c9] px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#2d201c]">
-                          {member.status}
-                        </span>
                       </div>
 
                       <dl className="space-y-2 text-sm text-[#554843]">

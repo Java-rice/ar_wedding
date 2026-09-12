@@ -139,10 +139,11 @@ export function WeddingDetails() {
               </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2">
               {[
-                { label: 'Best Man', people: ['Ludevico Domingo Jr'] },
                 { label: 'Parents of the Bride', people: ['Socorro Domingo', 'Ervin Domingo'] },
+                { label: 'Parents of the Groom', people: ['Elisa Pacaldo'] },
+                { label: 'Best Man', people: ['Ludevico Domingo Jr'] },
                 { label: 'Maid of Honor', people: ['Karina Domingo'] },
               ].map((group) => (
                 <div

@@ -32,7 +32,7 @@ export function Reminders() {
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#f0d7b9]">
             essentials
           </p>
-          <h2 className="mb-6 font-serif text-4xl font-light text-[#f9f4ef] md:text-5xl">
+          <h2 className="mb-6 font-serif text-3xl font-light leading-tight text-[#f9f4ef] sm:text-4xl md:text-5xl">
             Important Reminders
           </h2>
           <p className="text-[#f4e9e2]/80">
@@ -65,25 +65,25 @@ export function Reminders() {
           ))}
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-6 md:grid-cols-[220px_1fr] md:items-stretch">
+        <div className="mx-auto mt-16 grid max-w-5xl gap-5 md:grid-cols-[180px_1fr] md:items-stretch">
           <a
             href={photoUploadUrl}
             target="_blank"
             rel="noreferrer"
-            className="group mx-auto block h-fit w-full max-w-[220px] rounded-[22px] border border-[#efe3d8]/70 bg-[#f9f3ee]/85 p-4 text-center backdrop-blur-sm transition hover:-translate-y-1 hover:bg-[#f9f3ee]/95 md:mx-0"
-          >
+            className="order-2 mx-auto h-fit w-full max-w-[180px] space-y-2 overflow-hidden rounded-[24px] bg-[#f9f3ee]/5 p-3 text-center shadow-[0_16px_36px_rgba(18,14,13,0.18)] transition-all duration-300 hover:-translate-y-1 md:order-1 md:mx-0"
+        >
             <img
               src={photoUploadQrUrl}
               alt="QR code to upload wedding photos"
-              className="mx-auto aspect-square w-full rounded-xl bg-white p-3"
+              className="mx-auto aspect-square w-full rounded-xl bg-white p-2"
             />
-            <p className="mt-4 font-serif text-2xl text-[#2f2523]">Upload Photos</p>
-            <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#7a655d]">
+            <p className="mt-4 font-serif text-lg text-[#f9f4ef]">Upload Photos</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-[#f9f4ef]">
               Open Google Drive folder
             </p>
           </a>
 
-          <div className="relative overflow-hidden rounded-[28px] border border-[#f7e0c9]/15 bg-[#3a2d2a]/80 p-8 text-center shadow-[0_20px_40px_rgba(18,14,13,0.14)] md:p-10">
+          <div className="order-1 relative overflow-hidden rounded-[28px] border border-[#f7e0c9]/15 bg-[#3a2d2a]/80 p-6 text-center shadow-[0_20px_40px_rgba(18,14,13,0.14)] md:order-2 md:p-8">
             <div className="pointer-events-none absolute inset-0 opacity-30">
               <img
                 src="/Images/snap_share.jpg"

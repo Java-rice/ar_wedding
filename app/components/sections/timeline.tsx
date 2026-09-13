@@ -33,7 +33,7 @@ export function Timeline() {
     <section className="bg-secondary py-20 md:py-32 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-light text-secondary-foreground mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light leading-tight text-secondary-foreground mb-4">
             Wedding Day Timeline
           </h2>
           <p className="text-secondary-foreground/80">
@@ -57,7 +57,7 @@ export function Timeline() {
                 <p className="text-sm uppercase tracking-widest text-accent font-medium mb-1">
                   {event.time}
                 </p>
-                <h3 className="font-serif text-2xl font-light text-secondary-foreground mb-2">
+                <h3 className="font-serif text-xl sm:text-2xl font-light text-secondary-foreground mb-2">
                   {event.title}
                 </h3>
                 <p className="text-secondary-foreground/80">

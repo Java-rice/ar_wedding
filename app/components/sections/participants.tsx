@@ -68,7 +68,7 @@ export function Participants() {
         </div>
 
         <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light leading-tight text-foreground mb-6">
             Our Wedding Honors
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -102,7 +102,7 @@ export function Participants() {
 
         {/* Secondary Sponsors */}
         <div className="border-t-2 border-primary pt-12">
-          <h3 className="font-serif text-3xl font-light text-foreground mb-12 text-center">
+          <h3 className="font-serif text-2xl sm:text-3xl font-light text-foreground mb-12 text-center">
             Secondary Sponsors
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

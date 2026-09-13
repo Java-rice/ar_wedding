@@ -21,7 +21,7 @@ export function RSVP() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#b85c3b]">
               RSVP
             </p>
-            <h2 className="mb-6 font-serif text-4xl font-light text-[#2d201c] md:text-5xl">
+            <h2 className="mb-6 font-serif text-3xl font-light leading-tight text-[#2d201c] sm:text-4xl md:text-5xl">
               Kindly RSVP
             </h2>
             <p className="text-[#5d4c47]">
@@ -38,7 +38,7 @@ export function RSVP() {
               <p className="mt-6 text-xs font-semibold uppercase tracking-[0.34em] text-[#b85c3b]">
                 RSVP received
               </p>
-              <h3 className="mt-3 font-serif text-3xl font-light text-[#2d201c]">
+              <h3 className="mt-3 font-serif text-2xl font-light leading-tight text-[#2d201c] sm:text-3xl">
                 Thank you for letting us know
               </h3>
               <p className="mx-auto mt-5 max-w-md leading-relaxed text-[#554843]">
@@ -66,7 +66,7 @@ export function RSVP() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-[#b85c3b]">
               Find the venues
             </p>
-            <h3 className="font-serif text-3xl font-light text-[#2d201c]">
+            <h3 className="font-serif text-2xl font-light leading-tight text-[#2d201c] sm:text-3xl">
               Scan for directions
             </h3>
             </div>

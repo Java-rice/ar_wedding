@@ -16,7 +16,7 @@ export function WeddingDetails() {
       <div className="relative mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#b85c3b]">
-            Our story
+            The Journey
           </p>
           <h2 className="break-words font-serif text-3xl font-light leading-tight text-[#2d201c] sm:text-4xl md:text-5xl">
             Our Love Story <span aria-hidden="true">🤍</span>

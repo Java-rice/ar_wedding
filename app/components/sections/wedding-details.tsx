@@ -19,22 +19,42 @@ export function WeddingDetails() {
             Our story
           </p>
           <h2 className="font-serif text-4xl font-light text-[#2d201c] md:text-5xl">
-            A love story written with time, laughter, and quiet joy
+            Our Love Story <span aria-hidden="true">🤍</span>
           </h2>
         </div>
 
+        <div className="mx-auto mb-14 max-w-4xl space-y-5 text-center text-lg leading-relaxed text-[#554843]">
+          <p>
+            Our story began in college, when we were simply two young hearts finding our way through life. What started as a friendship slowly grew into something deeper—something neither of us expected.
+          </p>
+          <p>
+            Our bond deepened in both love and faith. Through God’s steady guidance, he discovered and wholeheartedly embraced our shared beliefs. His decision to walk this spiritual path with me marked one of the most profound milestones of our journey—not just because it unified us in faith, but because it anchored the foundation of the life and future we were building together.
+          </p>
+          <p>
+            After years of growing, learning, and continually choosing one another, we stand ready for our next chapter—moving forward as two hearts united in faith, prepared to make a lifelong promise before God.
+          </p>
+          <p className="font-serif text-xl italic text-[#2d201c]">
+            From young love to a lifetime of faith and love. And through it all, God was guiding us home to each other. <span aria-hidden="true">🤍</span>
+          </p>
+          <blockquote className="border-y border-[#e7d6c5] px-5 py-5 font-serif text-xl italic text-[#2d201c]">
+            “House and wealth are the inheritance from fathers, but a prudent wife is from God.”
+            <footer className="mt-3 text-xs not-italic uppercase tracking-[0.24em] text-[#b85c3b]">
+              Proverbs 19:14
+            </footer>
+          </blockquote>
+        </div>
+
         <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-          <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
-            <div className="relative h-[420px] overflow-hidden rounded-[30px] bg-[#f2e6dc] shadow-[0_22px_60px_rgba(45,32,28,0.12)] md:h-[500px]">
-              <Image
-                src="/Images/main1.jpg"
-                alt="The couple together"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-col gap-6">
+          <div className="relative h-[420px] overflow-hidden rounded-[30px] bg-[#f2e6dc] shadow-[0_22px_60px_rgba(45,32,28,0.12)] md:h-[500px]">
+            <Image
+              src="/Images/main5.jpg"
+              alt="The couple together"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+            {/* <div className="flex flex-col gap-6">
               <div className="relative h-52 overflow-hidden rounded-[30px] bg-[#f2e6dc] shadow-[0_22px_60px_rgba(45,32,28,0.12)] md:h-64">
                 <Image
                   src="/Images/main2.jpg"
@@ -51,23 +71,22 @@ export function WeddingDetails() {
                 <p className="mt-4 text-lg leading-relaxed text-[#554843]">
                   Every chapter has felt like home — full of patience, laughter, and the kind of love that keeps growing.
                 </p>
-              </div>
-            </div>
-          </div>
+              </div> 
+            </div> */}
 
           <div className="rounded-[32px] bg-[#fffaf5] p-7 shadow-[0_20px_50px_rgba(45,32,28,0.08)] md:p-9">
             <p className="mb-5 text-sm uppercase tracking-[0.28em] text-[#7a655d]">
               The celebration
             </p>
-            <p className="text-lg leading-relaxed text-[#554843]">
+            {/* <p className="text-lg leading-relaxed text-[#554843]">
               What began as a quiet connection flourished into a love that is steady, joyful, and deeply rooted in faith, friendship, and family. We are so grateful to walk this next chapter together and to celebrate it surrounded by the people who have shaped our story.
             </p>
 
             <blockquote className="mt-8 border-l-2 border-[#c97a5f] pl-5 text-xl italic leading-relaxed text-[#2d201c]">
               “And in time, we found our forever — not in a single moment, but in all the small ones.”
-            </blockquote>
+            </blockquote> */}
 
-            <div className="mt-8 space-y-4 border-t border-[#ecdfd4] pt-6">
+            <div className="mt-2 space-y-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Date</p>
                 <p className="mt-2 text-xl text-[#2d201c]">Tuesday, December 1, 2026</p>
@@ -83,6 +102,11 @@ export function WeddingDetails() {
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Reception</p>
                 <p className="mt-2 text-xl text-[#2d201c]">The Pace</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Hashtags</p>
+                <p className="mt-2 text-xl text-[#2d201c]">#LifetimeARVIEntureswithREGINA</p>
+                <p className="mt-2 text-xl text-[#2d201c]">#ARVIEryspecialmomentswithREGINA</p>
               </div>
             </div>
           </div>

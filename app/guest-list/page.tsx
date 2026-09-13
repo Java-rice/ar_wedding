@@ -109,7 +109,7 @@ export default function GuestListPage() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#b85c3b]">
-            Entourage
+            Special Guests & Attendants
           </p>
           <h1 className="font-serif text-5xl font-light text-[#2d201c] md:text-6xl">
             Members of Entourage

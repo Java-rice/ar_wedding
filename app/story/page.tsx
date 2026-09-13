@@ -6,17 +6,17 @@ const storyMoments = [
   {
     title: 'The first hello',
     description: 'A simple conversation became the beginning of something beautifully steady.',
-    image: '/Images/hero3.jpg',
+    image: '/Images/main6.jpg',
   },
   {
     title: 'The little things',
     description: 'The quiet rituals, shared jokes, and everyday moments that made love feel natural.',
-    image: '/Images/hero4.jpg',
+    image: '/Images/main4.jpg',
   },
   {
     title: 'The forever plan',
     description: 'And then came the day we decided to say yes to forever, together.',
-    image: '/Images/hero5.jpg',
+    image: '/Images/main1.jpg',
   },
 ]
 
@@ -35,7 +35,7 @@ export default function StoryPage() {
 
         <div className="mb-16 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="relative h-[520px] overflow-hidden rounded-[32px] bg-[#f2e6dc] shadow-[0_24px_70px_rgba(45,32,28,0.12)]">
-            <Image src="/Images/main1.jpg" alt="The couple" fill className="object-cover" />
+            <Image src="/Images/main5.jpg" alt="The couple" fill className="object-cover" />
           </div>
 
           <div className="space-y-6 rounded-[32px] bg-[#fffaf5] p-8 shadow-[0_20px_55px_rgba(45,32,28,0.08)] md:p-10">

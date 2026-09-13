@@ -98,7 +98,7 @@ export function WeddingDetails() {
               },
               {
                 title: 'The Groom',
-                name: 'Arvie Pandac',
+                name: 'Arvie Pandao',
                 image: '/Images/groom.jpg',
               },
               {

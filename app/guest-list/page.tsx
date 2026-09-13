@@ -108,11 +108,11 @@ export default function GuestListPage() {
     <main className="min-h-screen bg-[#f7f0ea] px-4 py-16 text-[#2d201c] md:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 text-center">
-          <p className="mb-4 text-md font-semibold uppercase tracking-[0.38em] text-[#b85c3b]">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#b85c3b]">
             Entourage
           </p>
-          <h1 className="font-serif text-xl font-light text-[#2d201c] md:text-3xl">
-            Special Guests & Attendants
+          <h1 className="font-serif text-5xl font-light text-[#2d201c] md:text-6xl">
+            Members of Entourage
           </h1>
         </div>
 
@@ -147,7 +147,7 @@ export default function GuestListPage() {
                             key={`${subgroup.title}-${member.name}`}
                             className={`px-1 py-2 ${member.remarks === 'Best Man' || member.remarks === 'Maid of Honor' ? 'rounded-lg bg-[#f2e6dc] px-4' : ''}`}
                           >
-                            <h4 className={`font-serif text-lg sm:text-xl ${member.remarks === 'Best Man' || member.remarks === 'Maid of Honor' ? 'font-semibold text-[#b85c3b]' : 'text-[#2d201c]'}`}>
+                            <h4 className={`font-serif text-base sm:text-lg ${member.remarks === 'Best Man' || member.remarks === 'Maid of Honor' ? 'font-semibold text-[#b85c3b]' : 'text-[#2d201c]'}`}>
                               {member.name}
                             </h4>
                           </div>
@@ -167,7 +167,7 @@ export default function GuestListPage() {
                       key={`${group.title}-${member.name}`}
                       className={`px-1 py-2 ${member.remarks === 'Best Man' || member.remarks === 'Maid of Honor' ? 'rounded-lg bg-[#f2e6dc] px-4' : ''}`}
                     >
-                      <h3 className={`font-serif text-lg sm:text-xl ${member.remarks === 'Best Man' || member.remarks === 'Maid of Honor' ? 'font-semibold text-[#b85c3b]' : 'text-[#2d201c]'}`}>
+                      <h3 className={`font-serif text-base sm:text-lg ${member.remarks === 'Best Man' || member.remarks === 'Maid of Honor' ? 'font-semibold text-[#b85c3b]' : 'text-[#2d201c]'}`}>
                         {member.name}
                       </h3>
                     </div>

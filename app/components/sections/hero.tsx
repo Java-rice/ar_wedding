@@ -50,11 +50,11 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mt-6 space-y-2 text-center">
-            <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f7d4ae]">
+          <div className="mx-auto mt-6 max-w-full space-y-2 px-2 text-center sm:px-0">
+            <p className="break-words text-xs font-medium leading-relaxed tracking-[0.12em] text-[#f7d4ae] sm:text-sm sm:tracking-[0.3em]">
               #LifetimeARVIEntureswithREGINA
             </p>
-            <p className="text-sm font-medium uppercase tracking-[0.3em] text-[#f7d4ae]">
+            <p className="break-words text-xs font-medium leading-relaxed tracking-[0.12em] text-[#f7d4ae] sm:text-sm sm:tracking-[0.3em]">
               #ARVIEryspecialmomentswithREGINA
             </p>
           </div>

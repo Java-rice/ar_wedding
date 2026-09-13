@@ -58,7 +58,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md space-y-3 text-left">
+    <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-3 text-left lg:mx-0">
       {error && (
         <div className="p-4 bg-destructive/10 border border-destructive/30 rounded-lg text-destructive text-sm">
           {error}

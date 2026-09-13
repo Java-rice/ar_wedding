@@ -1,5 +1,8 @@
 'use client'
 
+const photoUploadUrl = 'https://drive.google.com/drive/folders/1LumEkCnGoHQmSnVTjVPHIDXbsXMWqFQ2'
+const photoUploadQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(photoUploadUrl)}`
+
 export function Reminders() {
   const reminders = [
     {
@@ -62,26 +65,41 @@ export function Reminders() {
           ))}
         </div>
 
-        <div className="relative mx-auto mt-16 max-w-2xl overflow-hidden rounded-[28px] border border-[#f7e0c9]/10 bg-[#f9f3ee]/5 p-8 text-center shadow-[0_20px_40px_rgba(18,14,13,0.14)]">
-          <div className="absolute inset-0 opacity-20">
+        <div className="mx-auto mt-16 grid max-w-5xl gap-6 md:grid-cols-[220px_1fr] md:items-stretch">
+          <a
+            href={photoUploadUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="group mx-auto block h-fit w-full max-w-[220px] rounded-[22px] border border-[#efe3d8]/70 bg-[#f9f3ee]/85 p-4 text-center backdrop-blur-sm transition hover:-translate-y-1 hover:bg-[#f9f3ee]/95 md:mx-0"
+          >
             <img
-              src="/Images/snap_share.jpg"
-              alt="Wedding day atmosphere"
-              className="h-full w-full object-cover"
+              src={photoUploadQrUrl}
+              alt="QR code to upload wedding photos"
+              className="mx-auto aspect-square w-full rounded-xl bg-white p-3"
             />
-          </div>
-          <div className="relative z-10">
-            <div className="mb-4 flex justify-center">
-              <div className="rounded-full border border-[#f0d7b9]/30 bg-[#f9f3ee]/10 p-4 text-3xl text-[#f0d7b9]">
-                📸
-              </div>
-            </div>
-            <h3 className="font-serif text-2xl font-light text-[#f9f4ef]">
-              Snap & Share
-            </h3>
-            <p className="mt-4 text-[#f4e9e2]/80">
-              After the ceremony, feel free to capture candid moments and share photos from the reception. Tag us on social media using our wedding hashtags: <span className="font-medium text-[#f0d7b9]">#LifetimeARVIEntureswithREGINA</span> and <span className="font-medium text-[#f0d7b9]">#ARVIEryspecialmomentswithREGINA</span>
+            <p className="mt-4 font-serif text-2xl text-[#2f2523]">Upload Photos</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#7a655d]">
+              Open Google Drive folder
             </p>
+          </a>
+
+          <div className="relative overflow-hidden rounded-[28px] border border-[#f7e0c9]/15 bg-[#3a2d2a]/80 p-8 text-center shadow-[0_20px_40px_rgba(18,14,13,0.14)] md:p-10">
+            <div className="pointer-events-none absolute inset-0 opacity-30">
+              <img
+                src="/Images/snap_share.jpg"
+                alt="Wedding day atmosphere"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            <div className="relative z-10 text-center md:text-left">
+              <h3 className="font-serif text-2xl font-light text-[#f9f4ef]">
+                Snap & Share
+              </h3>
+              <p className="mt-4 text-[#f4e9e2]/80">
+                After the ceremony, feel free to capture candid moments and share photos from the reception. Tag us on social media using our wedding hashtags: <span className="font-medium text-[#f0d7b9]">#LifetimeARVIEntureswithREGINA</span> and <span className="font-medium text-[#f0d7b9]">#ARVIEryspecialmomentswithREGINA</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>

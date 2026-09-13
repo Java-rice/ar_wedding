@@ -129,11 +129,6 @@ export function Attire() {
                   </ul>
                 </div>
               </div>
-
-              <ul className="space-y-2 text-sm text-[#554843]">
-                <li>• Dress shoes required.</li>
-                <li>• Accessories in gold or metallic tones are welcome.</li>
-              </ul>
             </div>
           </div>
         </div>

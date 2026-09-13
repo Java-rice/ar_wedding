@@ -6,17 +6,17 @@ const storyMoments = [
   {
     title: 'Where it began',
     description: 'Our story began in college, when we were simply two young hearts finding our way through life. What started as a friendship slowly grew into something deeper—something neither of us expected.',
-    image: '/Images/main6.jpg',
+    image: '/Images/main4.jpg',
   },
   {
     title: 'Love and faith',
     description: 'Our bond deepened in both love and faith. Through God’s steady guidance, he discovered and wholeheartedly embraced our shared beliefs.',
-    image: '/Images/main4.jpg',
+    image: '/Images/lovefaith.jpg',
   },
   {
     title: 'Our next chapter',
     description: 'After years of growing, learning, and continually choosing one another, we stand ready to make a lifelong promise before God.',
-    image: '/Images/main1.jpg',
+    image: '/Images/nextchapter.jpg',
   },
 ]
 

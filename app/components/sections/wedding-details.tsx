@@ -18,12 +18,12 @@ export function WeddingDetails() {
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#b85c3b]">
             Our story
           </p>
-          <h2 className="font-serif text-4xl font-light text-[#2d201c] md:text-5xl">
+          <h2 className="break-words font-serif text-3xl font-light leading-tight text-[#2d201c] sm:text-4xl md:text-5xl">
             Our Love Story <span aria-hidden="true">🤍</span>
           </h2>
         </div>
 
-        <div className="mx-auto mb-14 max-w-4xl space-y-5 text-center text-lg leading-relaxed text-[#554843]">
+        <div className="mx-auto mb-14 max-w-4xl space-y-5 text-center text-base leading-relaxed text-[#554843] sm:text-lg">
           <p>
             Our story began in college, when we were simply two young hearts finding our way through life. What started as a friendship slowly grew into something deeper—something neither of us expected.
           </p>
@@ -33,10 +33,10 @@ export function WeddingDetails() {
           <p>
             After years of growing, learning, and continually choosing one another, we stand ready for our next chapter—moving forward as two hearts united in faith, prepared to make a lifelong promise before God.
           </p>
-          <p className="font-serif text-xl italic text-[#2d201c]">
+          <p className="font-serif text-lg italic text-[#2d201c] sm:text-xl">
             From young love to a lifetime of faith and love. And through it all, God was guiding us home to each other. <span aria-hidden="true">🤍</span>
           </p>
-          <blockquote className="border-y border-[#e7d6c5] px-5 py-5 font-serif text-xl italic text-[#2d201c]">
+          <blockquote className="break-words border-y border-[#e7d6c5] px-3 py-5 font-serif text-lg italic text-[#2d201c] sm:px-5 sm:text-xl">
             “House and wealth are the inheritance from fathers, but a prudent wife is from God.”
             <footer className="mt-3 text-xs not-italic uppercase tracking-[0.24em] text-[#b85c3b]">
               Proverbs 19:14
@@ -45,7 +45,7 @@ export function WeddingDetails() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-          <div className="relative h-[420px] overflow-hidden rounded-[30px] bg-[#f2e6dc] shadow-[0_22px_60px_rgba(45,32,28,0.12)] md:h-[500px]">
+          <div className="relative h-[300px] w-full overflow-hidden rounded-[24px] bg-[#f2e6dc] shadow-[0_22px_60px_rgba(45,32,28,0.12)] sm:h-[420px] sm:rounded-[30px] md:h-[500px]">
             <Image
               src="/Images/main5.jpg"
               alt="The couple together"
@@ -54,59 +54,33 @@ export function WeddingDetails() {
               className="object-cover"
             />
           </div>
-            {/* <div className="flex flex-col gap-6">
-              <div className="relative h-52 overflow-hidden rounded-[30px] bg-[#f2e6dc] shadow-[0_22px_60px_rgba(45,32,28,0.12)] md:h-64">
-                <Image
-                  src="/Images/main2.jpg"
-                  alt="The couple smiling"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="rounded-[30px] bg-[#fffaf5] p-6 shadow-[0_18px_40px_rgba(45,32,28,0.06)]">
-                <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#7a655d]">
-                  Since then
-                </p>
-                <p className="mt-4 text-lg leading-relaxed text-[#554843]">
-                  Every chapter has felt like home — full of patience, laughter, and the kind of love that keeps growing.
-                </p>
-              </div> 
-            </div> */}
 
-          <div className="rounded-[32px] bg-[#fffaf5] p-7 shadow-[0_20px_50px_rgba(45,32,28,0.08)] md:p-9">
-            <p className="mb-5 text-sm uppercase tracking-[0.28em] text-[#7a655d]">
+          <div className="min-w-0 rounded-[26px] bg-[#fffaf5] p-5 shadow-[0_20px_50px_rgba(45,32,28,0.08)] sm:rounded-[32px] sm:p-7 md:p-9">
+            <p className="mb-5 text-xs uppercase tracking-[0.2em] text-[#7a655d] sm:text-sm sm:tracking-[0.28em]">
               The celebration
             </p>
-            {/* <p className="text-lg leading-relaxed text-[#554843]">
-              What began as a quiet connection flourished into a love that is steady, joyful, and deeply rooted in faith, friendship, and family. We are so grateful to walk this next chapter together and to celebrate it surrounded by the people who have shaped our story.
-            </p>
-
-            <blockquote className="mt-8 border-l-2 border-[#c97a5f] pl-5 text-xl italic leading-relaxed text-[#2d201c]">
-              “And in time, we found our forever — not in a single moment, but in all the small ones.”
-            </blockquote> */}
 
             <div className="mt-2 space-y-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Date</p>
-                <p className="mt-2 text-xl text-[#2d201c]">Tuesday, December 1, 2026</p>
+                <p className="mt-2 break-words text-lg text-[#2d201c] sm:text-xl">Tuesday, December 1, 2026</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Ceremony Time</p>
-                <p className="mt-2 text-xl text-[#2d201c]">3:00 PM</p>
+                <p className="mt-2 text-lg text-[#2d201c] sm:text-xl">3:00 PM</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Church</p>
-                <p className="mt-2 text-xl text-[#2d201c]">Iglesia Ni Cristo, Ciudad de Victoria</p>
+                <p className="mt-2 break-words text-lg text-[#2d201c] sm:text-xl">Iglesia Ni Cristo, Ciudad de Victoria</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Reception</p>
-                <p className="mt-2 text-xl text-[#2d201c]">The Pace</p>
+                <p className="mt-2 text-lg text-[#2d201c] sm:text-xl">The Pace</p>
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[#7a655d]">Hashtags</p>
-                <p className="mt-2 text-xl text-[#2d201c]">#LifetimeARVIEntureswithREGINA</p>
-                <p className="mt-2 text-xl text-[#2d201c]">#ARVIEryspecialmomentswithREGINA</p>
+                <p className="mt-2 break-words text-base leading-relaxed text-[#2d201c] sm:text-xl">#LifetimeARVIEntureswithREGINA</p>
+                <p className="mt-2 break-words text-base leading-relaxed text-[#2d201c] sm:text-xl">#ARVIEryspecialmomentswithREGINA</p>
               </div>
             </div>
           </div>
@@ -158,12 +132,12 @@ export function WeddingDetails() {
 
           <div className="rounded-[28px] border border-[#e9d8cb] bg-[#fffaf5]/80 p-5 shadow-[0_18px_40px_rgba(45,32,28,0.04)]">
             <div className="mb-4">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[#b85c3b]">
+              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-[#b85c3b]">
                 Featured Entourage
               </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2">
               {[
                 { label: 'Parents of the Bride', people: ['Socorro Domingo', 'Ervin Domingo'] },
                 { label: 'Parents of the Groom', people: ['Elisa Pacaldo'] },
@@ -172,15 +146,23 @@ export function WeddingDetails() {
               ].map((group) => (
                 <div
                   key={group.label}
-                  className="rounded-[22px] border border-[#efe3d8] bg-[#f7f0ea] p-4 shadow-[0_12px_26px_rgba(45,32,28,0.04)]"
+                  className="min-w-0 rounded-[18px] bg-[#f7f0ea] p-4"
                 >
-                  <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#b85c3b]">
+                  <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#b85c3b]">
                     {group.label}
                   </p>
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     {group.people.map((person) => (
-                      <div key={person} className="rounded-full bg-white/70 px-3 py-2.5 text-center">
-                        <p className="font-serif text-lg text-[#2d201c]">{person}</p>
+                      <div
+                        key={person}
+                        className={`break-words px-1 py-1.5 ${
+                          (group.label === 'Best Man' && person === 'Ludevico Domingo Jr') ||
+                          (group.label === 'Maid of Honor' && person === 'Karina Domingo')
+                            ? 'px-3'
+                            : ''
+                        }`}
+                      >
+                        <p className={`font-serif text-base sm:text-lg text-[#2d201c]`}>{person}</p>
                       </div>
                     ))}
                   </div>

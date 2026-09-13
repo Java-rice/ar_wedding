@@ -17,9 +17,19 @@ export function Footer() {
 
           <div className="text-center">
             <h3 className="mb-2 font-serif text-xl font-light text-[#f0d7b9]">Explore</h3>
-            <div className="space-y-2 text-sm text-[#f8f1ee]/75">
-              <p><a href="/story" className="transition hover:text-[#f0d7b9]">Our Story</a></p>
-              <p><a href="/guest-list" className="transition hover:text-[#f0d7b9]">Entourage</a></p>
+            <div className="flex flex-col items-center gap-2 text-sm">
+              <a
+                href="/story"
+                className="inline-flex min-h-10 items-center rounded-full px-4 text-[#f8f1ee]/85 underline decoration-[#f0d7b9]/50 underline-offset-4 transition hover:bg-[#f0d7b9]/10 hover:text-[#f0d7b9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f0d7b9]"
+              >
+                Our Story
+              </a>
+              <a
+                href="/guest-list"
+                className="inline-flex min-h-10 items-center rounded-full px-4 text-[#f8f1ee]/85 underline decoration-[#f0d7b9]/50 underline-offset-4 transition hover:bg-[#f0d7b9]/10 hover:text-[#f0d7b9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f0d7b9]"
+              >
+                Entourage
+              </a>
             </div>
           </div>
         </div>

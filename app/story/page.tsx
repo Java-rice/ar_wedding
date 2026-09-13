@@ -4,18 +4,18 @@ import Image from 'next/image'
 
 const storyMoments = [
   {
-    title: 'The first hello',
-    description: 'A simple conversation became the beginning of something beautifully steady.',
+    title: 'Where it began',
+    description: 'Our story began in college, when we were simply two young hearts finding our way through life. What started as a friendship slowly grew into something deeper—something neither of us expected.',
     image: '/Images/main6.jpg',
   },
   {
-    title: 'The little things',
-    description: 'The quiet rituals, shared jokes, and everyday moments that made love feel natural.',
+    title: 'Love and faith',
+    description: 'Our bond deepened in both love and faith. Through God’s steady guidance, he discovered and wholeheartedly embraced our shared beliefs.',
     image: '/Images/main4.jpg',
   },
   {
-    title: 'The forever plan',
-    description: 'And then came the day we decided to say yes to forever, together.',
+    title: 'Our next chapter',
+    description: 'After years of growing, learning, and continually choosing one another, we stand ready to make a lifelong promise before God.',
     image: '/Images/main1.jpg',
   },
 ]
@@ -26,28 +26,16 @@ export default function StoryPage() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 text-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#b85c3b]">
-            Our story
+            Our Love story
           </p>
           <h1 className="font-serif text-5xl font-light md:text-6xl">
-            A love that grew with time
+            A love story written with time, laughter, and quiet joy
           </h1>
         </div>
 
-        <div className="mb-16 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="mx-auto mb-16 max-w-4xl">
           <div className="relative h-[520px] overflow-hidden rounded-[32px] bg-[#f2e6dc] shadow-[0_24px_70px_rgba(45,32,28,0.12)]">
             <Image src="/Images/main5.jpg" alt="The couple" fill className="object-cover" />
-          </div>
-
-          <div className="space-y-6 rounded-[32px] bg-[#fffaf5] p-8 shadow-[0_20px_55px_rgba(45,32,28,0.08)] md:p-10">
-            <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#7a655d]">
-              How we met
-            </p>
-            <p className="text-lg leading-relaxed text-[#554843]">
-              We met in a season of life when everything was changing, and somehow, in the middle of all that uncertainty, we found a quiet kind of certainty in each other. It was not a dramatic beginning — just a beginning that felt right.
-            </p>
-            <p className="text-lg leading-relaxed text-[#554843]">
-              From then on, love became a rhythm of support, laughter, steadiness, and grace. A bond that deepened with every ordinary moment.
-            </p>
           </div>
         </div>
 
@@ -71,6 +59,13 @@ export default function StoryPage() {
             </article>
           ))}
         </div>
+
+        <blockquote className="mx-auto mt-16 max-w-3xl border-y border-[#e7d6c5] px-6 py-8 text-center font-serif text-2xl italic leading-relaxed text-[#2d201c]">
+          “House and wealth are the inheritance from fathers, but a prudent wife is from God.”
+          <footer className="mt-4 text-xs not-italic uppercase tracking-[0.24em] text-[#b85c3b]">
+            Proverbs 19:14
+          </footer>
+        </blockquote>
 
         <div className="mt-16 text-center">
           <a

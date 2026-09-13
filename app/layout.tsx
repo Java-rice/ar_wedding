@@ -7,12 +7,8 @@ export const metadata: Metadata = {
   description: 'Join us as we celebrate the beginning of our forever together',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: '/Images/icon.ico',
+    apple: '/Images/icon.ico',
   },
 }
 

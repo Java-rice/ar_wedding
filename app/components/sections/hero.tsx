@@ -62,14 +62,14 @@ export function Hero() {
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="#rsvp"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#f2d0a8] to-[#d89c76] px-7 py-3 text-sm font-medium uppercase tracking-[0.2em] text-[#241a18] shadow-[0_20px_40px_rgba(214,153,112,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_50px_rgba(214,153,112,0.42)]"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#f2d0a8] to-[#d89c76] px-7 py-3 text-sm font-medium uppercase tracking-[0.2em] text-[#241a18] shadow-[0_20px_40px_rgba(214,153,112,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_24px_50px_rgba(214,153,112,0.42)] active:scale-95"
             >
               RSVP Now
             </a>
 
             <a
               href="/story"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-7 py-3 text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-7 py-3 text-sm font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10 active:scale-95"
             >
               Our Story
             </a>

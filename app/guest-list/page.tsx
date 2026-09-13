@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 type EntourageMember = {
   name: string
   nickname: string
@@ -105,9 +107,9 @@ const entourageGroups: EntourageGroup[] = [
 
 export default function GuestListPage() {
   return (
-    <main className="min-h-screen bg-[#f7f0ea] px-4 py-16 text-[#2d201c] md:px-8">
+    <main className="page-reveal min-h-screen bg-[#f7f0ea] px-4 py-16 text-[#2d201c] md:px-8">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-12 text-center">
+        <div className="stagger-reveal mb-12 text-center" style={{ animationDelay: '100ms' }}>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.38em] text-[#b85c3b]">
             Special Guests & Attendants
           </p>
@@ -117,8 +119,12 @@ export default function GuestListPage() {
         </div>
 
         <div className="space-y-8">
-          {entourageGroups.map((group) => (
-            <section key={group.title} className="rounded-[28px] bg-[#fffaf5] p-6 shadow-[0_18px_45px_rgba(45,32,28,0.06)] md:p-8">
+          {entourageGroups.map((group, index) => (
+            <section
+              key={group.title}
+              className="stagger-reveal rounded-[28px] bg-[#fffaf5] p-6 shadow-[0_18px_45px_rgba(45,32,28,0.06)] md:p-8"
+              style={{ animationDelay: `${220 + index * 90}ms` }}
+            >
               <h2 className="mb-6 text-xs font-semibold uppercase tracking-[0.32em] text-[#b85c3b]">
                 {group.title}
               </h2>
@@ -179,12 +185,12 @@ export default function GuestListPage() {
         </div>
 
         <div className="mt-12 text-center">
-          <a
+          <Link
             href="/"
             className="inline-flex items-center justify-center rounded-full bg-[#b85c3b] px-7 py-3 text-sm font-medium uppercase tracking-[0.2em] text-white transition hover:bg-[#9f4f35]"
           >
             Back Home
-          </a>
+          </Link>
         </div>
       </div>
     </main>

@@ -58,7 +58,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-3 text-left lg:mx-0">
+    <form onSubmit={handleSubmit} aria-busy={isLoading} className="mx-auto max-w-md space-y-3 text-left transition-opacity duration-300 lg:mx-0">
       {error && (
         <div className="p-4 bg-destructive/10 border border-destructive/30 rounded-lg text-destructive text-sm">
           {error}
@@ -201,7 +201,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full py-3 px-6 bg-accent text-white font-medium hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+        className="w-full py-3 px-6 bg-accent text-white font-medium hover:bg-opacity-90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 transition-all duration-300"
       >
         {isLoading ? 'Submitting...' : 'Confirm My Attendance'}
       </button>

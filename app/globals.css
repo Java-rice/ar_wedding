@@ -235,3 +235,20 @@
     transform: scale(1);
   }
 }
+
+.page-reveal {
+  animation: fadeInUp 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.stagger-reveal {
+  opacity: 0;
+  animation: fadeInUp 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-reveal,
+  .stagger-reveal {
+    animation: none;
+    opacity: 1;
+  }
+}

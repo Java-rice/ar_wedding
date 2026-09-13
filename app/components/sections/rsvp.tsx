@@ -30,7 +30,7 @@ export function RSVP() {
           </div>
 
           {submitted ? (
-            <div className="relative overflow-hidden rounded-[30px] border border-[#e7d6c5] bg-[#fffaf5] p-8 text-center shadow-[0_20px_50px_rgba(45,32,28,0.08)] md:p-12">
+            <div className="stagger-reveal relative overflow-hidden rounded-[30px] border border-[#e7d6c5] bg-[#fffaf5] p-8 text-center shadow-[0_20px_50px_rgba(45,32,28,0.08)] md:p-12">
               <div className="pointer-events-none absolute left-1/2 top-0 h-1 w-20 -translate-x-1/2 bg-[#c97a5f]" />
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#f2e6dc] text-3xl text-[#b85c3b]">
                 &#10003;
@@ -50,7 +50,7 @@ export function RSVP() {
               <button
                 type="button"
                 onClick={() => setSubmitted(false)}
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-[#b85c3b] px-6 py-3 text-sm font-medium uppercase tracking-[0.16em] text-white transition hover:bg-[#9f4f35]"
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-[#b85c3b] px-6 py-3 text-sm font-medium uppercase tracking-[0.16em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#9f4f35] active:scale-95"
               >
                 RSVP for another guest
               </button>

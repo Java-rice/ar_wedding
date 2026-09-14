@@ -90,7 +90,7 @@ export function RSVP() {
                   />
                   <p className="mt-4 font-serif text-2xl text-[#2d201c]">{venue.name}</p>
                   <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#7a655d]">
-                    Open in Google Maps
+                    Click or Scan for Directions
                   </p>
                 </a>
               ))}

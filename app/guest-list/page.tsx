@@ -39,7 +39,7 @@ const entourageGroups: EntourageGroup[] = [
         members: [
           { name: 'Ludevico Domingo', nickname: 'Ding', status: 'Accepted', relation: 'Uncle of Bride', remarks: 'Ninong' },
           { name: 'Paquito Regalado', nickname: 'Paqz', status: 'Accepted', relation: 'Katiwala ng Purok', remarks: 'Ninong' },
-          { name: 'Erman Juancho', nickname: 'Dondon', status: 'Accepted', relation: 'Katiwala ng Grupo ni Groom', remarks: 'Ninong' },
+          { name: 'Erman Juachon', nickname: 'Dondon', status: 'Accepted', relation: 'Katiwala ng Grupo ni Groom', remarks: 'Ninong' },
           { name: 'Jaycee Santos', nickname: 'JC', status: 'Accepted', relation: 'Choirmate Bride', remarks: 'Ninong' },
           { name: 'Ricardo Rey Cruz', nickname: 'Rey', status: 'Accepted', relation: 'Boss ni Groom', remarks: 'Ninong' },
         ],

@@ -113,7 +113,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
             You may submit this RSVP on behalf of another guest. Add their name below.
           </p>
           <p className="mt-2 text-xs leading-relaxed text-[#b85c3b]">
-            Please make sure the guest you add is included on the expected guest list provided by the wedding celebrants.
+            Please make sure the guest you add is included on the expected guest by the wedding celebrants.
           </p>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row">

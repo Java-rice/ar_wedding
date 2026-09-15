@@ -35,6 +35,7 @@ const emailShell = (content: string) => `
 export function buildRsvpEmails(payload: RSVPEmailPayload) {
   const name = escapeHtml(payload.name)
   const email = escapeHtml(payload.email)
+  const emailDisplay = email || 'Not provided'
   const guestCount = escapeHtml(payload.guestCount)
   const guestNames = payload.guestNames.map(escapeHtml)
   const notes = escapeHtml(payload.notes?.trim() || 'No additional notes provided.')
@@ -72,7 +73,7 @@ export function buildRsvpEmails(payload: RSVPEmailPayload) {
         <h1 style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;">A new response has arrived.</h1>
         <div style="margin:24px 0;padding:20px;background:#f7f0ea;border:1px solid #ead8ca;">
           <div style="margin-bottom:12px;font-family:Georgia,'Times New Roman',serif;font-size:22px;">${name}</div>
-          <div style="color:#554843;line-height:1.9;">Email: <a href="mailto:${email}" style="color:#b85c3b;">${email}</a><br />Attendance: <strong>${attendance}</strong><br />Total guests: <strong>${guestCount}</strong><br />Notes: ${notes}</div>
+          <div style="color:#554843;line-height:1.9;">Email: ${email ? `<a href="mailto:${email}" style="color:#b85c3b;">${email}</a>` : emailDisplay}<br />Attendance: <strong>${attendance}</strong><br />Total guests: <strong>${guestCount}</strong><br />Notes: ${notes}</div>
           <div style="margin-top:14px;color:#554843;"><strong>Additional guests</strong><ul style="margin:6px 0 0;padding-left:20px;">${guestListHtml}</ul></div>
         </div>
         <p style="margin:0;color:#554843;">This response was submitted through the wedding website.</p>

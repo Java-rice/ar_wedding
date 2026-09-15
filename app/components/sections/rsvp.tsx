@@ -3,6 +3,13 @@
 import { useState } from 'react'
 import { RSVPForm } from '../ui/rsvp-form'
 
+type RSVPConfirmationDetails = {
+  name: string
+  email: string
+  attending: string
+  guestNames: string[]
+}
+
 const churchMapUrl = 'https://www.google.com/maps/place/Iglesia+Ni+Cristo+%5BBulacan+South%5D+-+Ciudad+De+Victoria/@14.7952083,120.9466071,17z/data=!3m1!4b1!4m6!3m5!1s0x3397ad9743d39081:0xe9b817c585bdcb8f!8m2!3d14.7952083!4d120.949182!16s%2Fg%2F11f11nmcr1?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D'
 const receptionMapUrl = 'https://www.google.com/maps/place/The+Pace/@14.7841334,120.9621087,17z/data=!3m1!4b1!4m6!3m5!1s0x3397ad5bef053aa9:0xc6dec8b5f1660cd7!8m2!3d14.7841334!4d120.9646836!16s%2Fg%2F11rp1rddn_?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D'
 
@@ -12,6 +19,8 @@ const qrCodeUrl = (mapUrl: string) =>
 
 export function RSVP() {
   const [submitted, setSubmitted] = useState(false)
+  const [showConfirmation, setShowConfirmation] = useState(false)
+  const [confirmationDetails, setConfirmationDetails] = useState<RSVPConfirmationDetails | null>(null)
 
   return (
     <section id="rsvp" className="bg-[#f7f0ea] px-4 py-20 md:py-32">
@@ -45,7 +54,9 @@ export function RSVP() {
                 Your response has been received. We are grateful to celebrate this beautiful chapter with you on December 1st.
               </p>
               <p className="mt-5 text-sm text-[#6d5b55]">
-                A confirmation email has been sent to your address.
+                {confirmationDetails?.email
+                  ? 'A confirmation email has been sent to your address.'
+                  : 'The hosts have been notified of your response.'}
               </p>
               <button
                 type="button"
@@ -56,7 +67,13 @@ export function RSVP() {
               </button>
             </div>
           ) : (
-            <RSVPForm onSubmit={() => setSubmitted(true)} />
+            <RSVPForm
+              onSubmit={(details) => {
+                setConfirmationDetails(details)
+                setSubmitted(true)
+                setShowConfirmation(true)
+              }}
+            />
           )}
         </div>
 
@@ -67,7 +84,7 @@ export function RSVP() {
               Find the venues
             </p>
             <h3 className="font-serif text-2xl font-light leading-tight text-[#2d201c] sm:text-3xl">
-              Scan for directions
+              Click or Scan for Directions
             </h3>
             </div>
 
@@ -89,9 +106,6 @@ export function RSVP() {
                     className="mx-auto aspect-square w-full max-w-[190px] rounded-xl bg-white p-3"
                   />
                   <p className="mt-4 font-serif text-2xl text-[#2d201c]">{venue.name}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[#7a655d]">
-                    Click or Scan for Directions
-                  </p>
                 </a>
               ))}
             </div>
@@ -113,6 +127,84 @@ export function RSVP() {
           </div>
         </div>
       </div>
+
+      {showConfirmation && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#2d201c]/55 px-4 py-8 backdrop-blur-sm"
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setShowConfirmation(false)
+          }}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="rsvp-confirmation-title"
+            className="relative w-full max-w-md rounded-[28px] border border-[#e7d6c5] bg-[#fffaf5] p-7 text-center shadow-[0_24px_80px_rgba(45,32,28,0.22)] md:p-10"
+          >
+            <button
+              type="button"
+              onClick={() => setShowConfirmation(false)}
+              aria-label="Close RSVP confirmation"
+              className="absolute right-5 top-4 text-2xl leading-none text-[#7a655d] transition hover:text-[#2d201c]"
+            >
+              &times;
+            </button>
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#f2e6dc] text-3xl text-[#b85c3b]">
+              &#10003;
+            </div>
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.34em] text-[#b85c3b]">
+              RSVP confirmed
+            </p>
+            <h2 id="rsvp-confirmation-title" className="mt-3 font-serif text-3xl font-light leading-tight text-[#2d201c]">
+              Thank you for responding
+            </h2>
+            <p className="mx-auto mt-5 max-w-sm leading-relaxed text-[#554843]">
+              Please screenshot this confirmation for your records.{' '}
+              {confirmationDetails?.email
+                ? 'A confirmation email has also been sent to you.'
+                : 'The hosts have been notified of your response.'}
+            </p>
+            {confirmationDetails && (
+              <div className="mt-7 rounded-2xl border border-[#e7d6c5] bg-[#f7f0ea] p-5 text-left text-sm text-[#554843]">
+                <div className="flex justify-between gap-4 border-b border-[#e7d6c5] pb-3">
+                  <span className="text-[#7a655d]">Guest</span>
+                  <span className="text-right font-medium text-[#2d201c]">{confirmationDetails.name}</span>
+                </div>
+                <div className="flex justify-between gap-4 border-b border-[#e7d6c5] py-3">
+                  <span className="text-[#7a655d]">Attendance</span>
+                  <span className="text-right font-medium text-[#2d201c]">
+                    {confirmationDetails.attending === 'yes' ? 'Attending' : 'Unable to attend'}
+                  </span>
+                </div>
+                <div className="flex justify-between gap-4 border-b border-[#e7d6c5] py-3">
+                  <span className="text-[#7a655d]">Total guests</span>
+                  <span className="text-right font-medium text-[#2d201c]">{1 + confirmationDetails.guestNames.length}</span>
+                </div>
+                <div className="flex justify-between gap-4 pt-3">
+                  <span className="text-[#7a655d]">Email</span>
+                  <span className="max-w-[65%] break-words text-right font-medium text-[#2d201c]">
+                    {confirmationDetails.email || 'Not provided'}
+                  </span>
+                </div>
+                {confirmationDetails.guestNames.length > 0 && (
+                  <div className="mt-3 border-t border-[#e7d6c5] pt-3">
+                    <span className="text-[#7a655d]">Additional guests</span>
+                    <p className="mt-1 font-medium text-[#2d201c]">{confirmationDetails.guestNames.join(', ')}</p>
+                  </div>
+                )}
+              </div>
+            )}
+            <button
+              type="button"
+              onClick={() => setShowConfirmation(false)}
+              className="mt-8 rounded-full bg-[#b85c3b] px-7 py-3 text-sm font-medium uppercase tracking-[0.16em] text-white transition duration-300 hover:bg-[#9f4f35] active:scale-95"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

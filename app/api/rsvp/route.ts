@@ -27,15 +27,14 @@ export async function POST(request: Request) {
 
     formData.guestCount = String(1 + formData.guestNames.length)
 
-    if (!formData.name || !formData.email) {
+    if (!formData.name) {
       return NextResponse.json(
-        { error: 'Name and email are required.' },
+        { error: 'Name is required.' },
         { status: 400 }
       )
     }
 
     const { guest, host } = buildRsvpEmails(formData)
-    const guestEmail = formData.email
     const hostEmails = (process.env.RSVP_TO_EMAIL || 'apandac06@gmail.com,perochejmp@gmail.com')
       .split(',')
       .map((email) => email.trim())
@@ -64,18 +63,20 @@ export async function POST(request: Request) {
       },
     })
 
-    await transporter.sendMail({
-      from: smtpFrom,
-      to: guestEmail,
-      subject: guest.subject,
-      text: guest.text,
-      html: guest.html,
-    })
+    if (formData.email) {
+      await transporter.sendMail({
+        from: smtpFrom,
+        to: formData.email,
+        subject: guest.subject,
+        text: guest.text,
+        html: guest.html,
+      })
+    }
 
     await transporter.sendMail({
       from: smtpFrom,
       to: hostEmails,
-      replyTo: guestEmail,
+      ...(formData.email ? { replyTo: formData.email } : {}),
       subject: host.subject,
       text: host.text,
       html: host.html,
@@ -83,9 +84,11 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: 'RSVP received. Confirmation and notification emails have been sent.',
+      message: formData.email
+        ? 'RSVP received. Confirmation and notification emails have been sent.'
+        : 'RSVP received. A notification has been sent to the hosts.',
       email: {
-        to: guestEmail,
+        to: formData.email || null,
         host: hostEmails,
         subject: guest.subject,
       },

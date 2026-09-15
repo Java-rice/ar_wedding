@@ -3,7 +3,12 @@
 import { useState } from 'react'
 
 interface RSVPFormProps {
-  onSubmit: () => void
+  onSubmit: (details: {
+    name: string
+    email: string
+    attending: string
+    guestNames: string[]
+  }) => void
 }
 
 export function RSVPForm({ onSubmit }: RSVPFormProps) {
@@ -47,7 +52,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
         throw new Error(message)
       }
 
-      onSubmit()
+      onSubmit({ ...formData, guestNames: additionalGuestNames })
     } catch (err) {
       const message = err instanceof Error && err.message ? err.message : 'Failed to submit RSVP. Please try again.'
       setError(message)
@@ -85,7 +90,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
       {/* Email Address */}
       <div className="space-y-2">
         <label htmlFor="email" className="block text-sm font-medium text-foreground">
-          Email Address
+          Email Address <span className="font-normal text-muted-foreground">(Optional)</span>
         </label>
         <input
           type="email"
@@ -94,7 +99,6 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
           placeholder="your@email.com"
           value={formData.email}
           onChange={handleChange}
-          required
           className="w-full px-4 py-3 border border-border rounded-lg bg-card text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
         />
       </div>
@@ -107,6 +111,9 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
           </label>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
             You may submit this RSVP on behalf of another guest. Add their name below.
+          </p>
+          <p className="mt-2 text-xs leading-relaxed text-[#b85c3b]">
+            Please make sure the guest you add is included on the expected guest list provided by the wedding celebrants.
           </p>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row">

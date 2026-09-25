@@ -1,7 +1,6 @@
 export type RSVPEmailPayload = {
   name: string
   email: string
-  guestNames: string[]
   guestCount: string
   attending: 'yes' | 'no'
   notes?: string
@@ -37,17 +36,14 @@ export function buildRsvpEmails(payload: RSVPEmailPayload) {
   const email = escapeHtml(payload.email)
   const emailDisplay = email || 'Not provided'
   const guestCount = escapeHtml(payload.guestCount)
-  const guestNames = payload.guestNames.map(escapeHtml)
   const notes = escapeHtml(payload.notes?.trim() || 'No additional notes provided.')
   const attendance = payload.attending === 'yes' ? 'Attending' : 'Unable to attend'
   const status = payload.attending === 'yes' ? 'We are so happy you can join us.' : 'We are sorry you will not be able to join us.'
-  const guestList = guestNames.length > 0 ? guestNames.join(', ') : 'No additional guests'
-  const guestListHtml = guestNames.length > 0
-    ? guestNames.map((guestName) => `<li>${guestName}</li>`).join('')
-    : '<li>No additional guests</li>'
+  const seatingNote = 'NOTE: We have reserved seats specifically for the guests indicated in our message. If you wish to bring or add anyone beyond the reserved guest count, kindly confirm with the couple first. Thank you so much for understanding!'
+  const weddingDetails = 'Wedding details: Tuesday, December 1, 2026 | Ceremony: 3:00 PM at Iglesia Ni Cristo, Ciudad de Victoria | Reception: The Pace'
 
-  const guestText = `Hello ${payload.name},\n\nYour RSVP has been received. ${status}\n\nAdditional guests: ${guestList}\nTotal guests: ${payload.guestCount}\nAttendance: ${attendance}\nNotes: ${payload.notes?.trim() || 'No additional notes provided.'}\n\nWith love,\nArvie & Regina`
-  const hostText = `New RSVP received\n\nName: ${payload.name}\nEmail: ${payload.email}\nAdditional guests: ${guestList}\nTotal guests: ${payload.guestCount}\nAttendance: ${attendance}\nNotes: ${payload.notes?.trim() || 'No additional notes provided.'}`
+  const guestText = `Hello ${payload.name},\n\nYour RSVP has been received. ${status}\n\nTotal guests: ${payload.guestCount}\nAttendance: ${attendance}\nNotes: ${payload.notes?.trim() || 'No additional notes provided.'}\n\n${weddingDetails}\n\n${seatingNote}\n\nWith love,\nArvie & Regina`
+  const hostText = `New RSVP received\n\nName: ${payload.name}\nEmail: ${payload.email}\nTotal guests: ${payload.guestCount}\nAttendance: ${attendance}\nNotes: ${payload.notes?.trim() || 'No additional notes provided.'}\n\n${weddingDetails}\n\n${seatingNote}`
 
   return {
     guest: {
@@ -60,7 +56,8 @@ export function buildRsvpEmails(payload: RSVPEmailPayload) {
         <div style="margin:24px 0;padding:18px;background:#f7f0ea;border-left:3px solid #c97a5f;">
           <strong style="font-family:Georgia,'Times New Roman',serif;font-size:20px;font-weight:normal;">Your RSVP</strong>
           <div style="margin-top:12px;color:#554843;">Attendance: <strong>${attendance}</strong><br />Total guests: <strong>${guestCount}</strong></div>
-          <div style="margin-top:12px;color:#554843;">Additional guests: ${guestList}</div>
+          <div style="margin-top:12px;color:#554843;">${seatingNote}</div>
+          <div style="margin-top:12px;color:#554843;"><strong>Wedding details</strong><br />Tuesday, December 1, 2026<br />Ceremony: 3:00 PM at Iglesia Ni Cristo, Ciudad de Victoria<br />Reception: The Pace</div>
         </div>
         <p style="margin:0;">We cannot wait to celebrate this beautiful chapter with you.</p>
       `),
@@ -74,7 +71,8 @@ export function buildRsvpEmails(payload: RSVPEmailPayload) {
         <div style="margin:24px 0;padding:20px;background:#f7f0ea;border:1px solid #ead8ca;">
           <div style="margin-bottom:12px;font-family:Georgia,'Times New Roman',serif;font-size:22px;">${name}</div>
           <div style="color:#554843;line-height:1.9;">Email: ${email ? `<a href="mailto:${email}" style="color:#b85c3b;">${email}</a>` : emailDisplay}<br />Attendance: <strong>${attendance}</strong><br />Total guests: <strong>${guestCount}</strong><br />Notes: ${notes}</div>
-          <div style="margin-top:14px;color:#554843;"><strong>Additional guests</strong><ul style="margin:6px 0 0;padding-left:20px;">${guestListHtml}</ul></div>
+          <div style="margin-top:14px;color:#554843;">${seatingNote}</div>
+          <div style="margin-top:14px;color:#554843;"><strong>Wedding details</strong><br />Tuesday, December 1, 2026<br />Ceremony: 3:00 PM at Iglesia Ni Cristo, Ciudad de Victoria<br />Reception: The Pace</div>
         </div>
         <p style="margin:0;color:#554843;">This response was submitted through the wedding website.</p>
       `),

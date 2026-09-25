@@ -10,22 +10,16 @@ export async function POST(request: Request) {
     const formData: {
       name: string
       email: string
-      guestNames: string[]
       guestCount: string
       attending: 'yes' | 'no'
       notes: string
     } = {
       name: String(payload.name ?? '').trim(),
       email: String(payload.email ?? '').trim(),
-      guestNames: Array.isArray(payload.guestNames)
-        ? payload.guestNames.map((name: unknown) => String(name).trim()).filter(Boolean)
-        : [],
       guestCount: '1',
       attending: payload.attending === 'no' ? 'no' : 'yes',
       notes: String(payload.notes ?? '').trim(),
     }
-
-    formData.guestCount = String(1 + formData.guestNames.length)
 
     if (!formData.name) {
       return NextResponse.json(

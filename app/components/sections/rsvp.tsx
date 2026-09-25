@@ -7,7 +7,6 @@ type RSVPConfirmationDetails = {
   name: string
   email: string
   attending: string
-  guestNames: string[]
 }
 
 const churchMapUrl = 'https://www.google.com/maps/place/Iglesia+Ni+Cristo+%5BBulacan+South%5D+-+Ciudad+De+Victoria/@14.7952083,120.9466071,17z/data=!3m1!4b1!4m6!3m5!1s0x3397ad9743d39081:0xe9b817c585bdcb8f!8m2!3d14.7952083!4d120.949182!16s%2Fg%2F11f11nmcr1?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D'
@@ -16,6 +15,12 @@ const receptionMapUrl = 'https://www.google.com/maps/place/The+Pace/@14.7841334,
 // Sample QR implementation: replace these generated images with local QR assets when ready.
 const qrCodeUrl = (mapUrl: string) =>
   `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(mapUrl)}`
+
+const weddingDetails = [
+  ['Date', 'Tuesday, December 1, 2026'],
+  ['Ceremony', '3:00 PM at Iglesia Ni Cristo, Ciudad de Victoria'],
+  ['Reception', 'The Pace'],
+]
 
 export function RSVP() {
   const [submitted, setSubmitted] = useState(false)
@@ -34,7 +39,7 @@ export function RSVP() {
               Kindly RSVP
             </h2>
             <p className="text-[#5d4c47]">
-              Kindly RSVP on or before October 15, 2026
+              We would be honored to celebrate with you.
             </p>
           </div>
 
@@ -53,9 +58,15 @@ export function RSVP() {
               <p className="mx-auto mt-5 max-w-md leading-relaxed text-[#554843]">
                 Your response has been received. We are grateful to celebrate this beautiful chapter with you on December 1st.
               </p>
+              <div className="mx-auto mt-5 max-w-md rounded-2xl border border-[#e7d6c5] bg-[#f7f0ea] p-4 text-left text-sm text-[#554843]">
+                <p className="mb-3 font-semibold uppercase tracking-[0.2em] text-[#b85c3b]">Wedding details</p>
+                {weddingDetails.map(([label, value]) => (
+                  <p key={label} className="py-1"><span className="font-medium text-[#7a655d]">{label}:</span> {value}</p>
+                ))}
+              </div>
               <p className="mt-5 text-sm text-[#6d5b55]">
                 {confirmationDetails?.email
-                  ? 'A confirmation email has been sent to your address.'
+                  ? 'A confirmation email has been sent to your email address.'
                   : 'The hosts have been notified of your response.'}
               </p>
               <button
@@ -63,7 +74,7 @@ export function RSVP() {
                 onClick={() => setSubmitted(false)}
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-[#b85c3b] px-6 py-3 text-sm font-medium uppercase tracking-[0.16em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#9f4f35] active:scale-95"
               >
-                RSVP for another guest
+                Submit another RSVP
               </button>
             </div>
           ) : (
@@ -140,7 +151,7 @@ export function RSVP() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="rsvp-confirmation-title"
-            className="relative w-full max-w-md rounded-[28px] border border-[#e7d6c5] bg-[#fffaf5] p-7 text-center shadow-[0_24px_80px_rgba(45,32,28,0.22)] md:p-10"
+            className="relative w-full max-w-md rounded-[28px] border border-[#e7d6c5] bg-[#fffaf5] p-7 text-center shadow-[0_24px_80px_rgba(45,32,28,0.22)] md:max-w-xl md:p-10 lg:max-w-2xl"
           >
             <button
               type="button"
@@ -177,24 +188,20 @@ export function RSVP() {
                     {confirmationDetails.attending === 'yes' ? 'Attending' : 'Unable to attend'}
                   </span>
                 </div>
-                <div className="flex justify-between gap-4 border-b border-[#e7d6c5] py-3">
-                  <span className="text-[#7a655d]">Total guests</span>
-                  <span className="text-right font-medium text-[#2d201c]">{1 + confirmationDetails.guestNames.length}</span>
-                </div>
                 <div className="flex justify-between gap-4 pt-3">
                   <span className="text-[#7a655d]">Email</span>
                   <span className="max-w-[65%] break-words text-right font-medium text-[#2d201c]">
                     {confirmationDetails.email || 'Not provided'}
                   </span>
                 </div>
-                {confirmationDetails.guestNames.length > 0 && (
-                  <div className="mt-3 border-t border-[#e7d6c5] pt-3">
-                    <span className="text-[#7a655d]">Additional guests</span>
-                    <p className="mt-1 font-medium text-[#2d201c]">{confirmationDetails.guestNames.join(', ')}</p>
-                  </div>
-                )}
               </div>
             )}
+            <div className="mt-5 rounded-2xl border border-[#e7d6c5] bg-[#f7f0ea] p-4 text-left text-sm text-[#554843]">
+              <p className="mb-3 font-semibold uppercase tracking-[0.2em] text-[#b85c3b]">Wedding details</p>
+              {weddingDetails.map(([label, value]) => (
+                <p key={label} className="py-1"><span className="font-medium text-[#7a655d]">{label}:</span> {value}</p>
+              ))}
+            </div>
             <button
               type="button"
               onClick={() => setShowConfirmation(false)}

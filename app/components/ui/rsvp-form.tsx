@@ -7,7 +7,6 @@ interface RSVPFormProps {
     name: string
     email: string
     attending: string
-    guestNames: string[]
   }) => void
 }
 
@@ -18,8 +17,6 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
     attending: 'yes',
     notes: '',
   })
-  const [additionalGuestName, setAdditionalGuestName] = useState('')
-  const [additionalGuestNames, setAdditionalGuestNames] = useState<string[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -42,7 +39,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formData, guestNames: additionalGuestNames }),
+        body: JSON.stringify(formData),
       })
 
       const data = await response.json().catch(() => null)
@@ -52,7 +49,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
         throw new Error(message)
       }
 
-      onSubmit({ ...formData, guestNames: additionalGuestNames })
+      onSubmit(formData)
     } catch (err) {
       const message = err instanceof Error && err.message ? err.message : 'Failed to submit RSVP. Please try again.'
       setError(message)
@@ -90,7 +87,7 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
       {/* Email Address */}
       <div className="space-y-2">
         <label htmlFor="email" className="block text-sm font-medium text-foreground">
-          Email Address <span className="font-normal text-muted-foreground">(Optional)</span>
+          Email Address 
         </label>
         <input
           type="email"
@@ -103,59 +100,9 @@ export function RSVPForm({ onSubmit }: RSVPFormProps) {
         />
       </div>
 
-      {/* Additional guests */}
-      <div className="space-y-3 rounded-2xl border border-border bg-card/60 p-4">
-        <div>
-          <label htmlFor="additionalGuestName" className="block text-sm font-medium text-foreground">
-            RSVP for someone else
-          </label>
-          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            You may submit this RSVP on behalf of another guest. Add their name below.
-          </p>
-          <p className="mt-2 text-xs leading-relaxed text-[#b85c3b]">
-            Please make sure the guest you add is included on the expected guest by the wedding celebrants.
-          </p>
-        </div>
-        <div className="flex flex-col gap-2 sm:flex-row">
-          <input
-            type="text"
-            id="additionalGuestName"
-            value={additionalGuestName}
-            onChange={(e) => setAdditionalGuestName(e.target.value)}
-            placeholder="Other guest's full name"
-            className="min-w-0 flex-1 px-4 py-3 border border-border rounded-lg bg-card text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-          />
-          <button
-            type="button"
-            onClick={() => {
-              const name = additionalGuestName.trim()
-              if (!name) return
-              setAdditionalGuestNames((names) => [...names, name])
-              setAdditionalGuestName('')
-            }}
-            className="rounded-lg border border-accent px-4 py-3 text-sm font-medium text-foreground transition hover:bg-accent/10"
-          >
-            Add guest
-          </button>
-        </div>
-        {additionalGuestNames.length > 0 && (
-          <ul className="space-y-2" aria-label="Additional guests">
-            {additionalGuestNames.map((guestName, index) => (
-              <li key={`${guestName}-${index}`} className="flex items-center justify-between rounded-lg bg-background px-3 py-2 text-sm text-foreground">
-                <span>{guestName}</span>
-                <button
-                  type="button"
-                  onClick={() => setAdditionalGuestNames((names) => names.filter((_, guestIndex) => guestIndex !== index))}
-                  aria-label={`Remove ${guestName}`}
-                  className="px-2 text-lg leading-none text-muted-foreground transition hover:text-foreground"
-                >
-                  &times;
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <p className="rounded-2xl border border-[#e7d6c5] bg-[#f2e6dc] p-4 text-sm leading-relaxed text-[#5d4c47]">
+        <strong className="font-semibold text-[#b85c3b]">NOTE:</strong> We have reserved seats specifically for the guests indicated in our message. If you wish to bring or add anyone beyond the reserved guest count, kindly confirm with the couple first. Thank you so much for understanding!
+      </p>
 
       {/* Attendance */}
       <div className="space-y-2">

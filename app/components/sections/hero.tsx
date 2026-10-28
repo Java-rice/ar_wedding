@@ -46,7 +46,7 @@ export function Hero() {
               Tuesday • 3:00 PM
             </div>
             <div className="rounded-full border border-white/20 bg-white/5 px-4 py-2 text-[10px] uppercase tracking-[0.28em] text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-              RSVP by October 15, 2026
+              RSVP by November 1, 2026
             </div>
           </div>
 
